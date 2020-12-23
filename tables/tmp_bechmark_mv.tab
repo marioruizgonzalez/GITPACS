@@ -1,0 +1,10 @@
+create table GG_ADMIN.TMP_BECHMARK_MV
+(
+  id_no_bech NUMBER(2),
+  plat_name  VARCHAR2(30),
+  mv_name    VARCHAR2(30),
+  start_time DATE,
+  end_date   DATE
+)
+;
+

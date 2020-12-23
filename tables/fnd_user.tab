@@ -1,0 +1,40 @@
+create table GG_ADMIN.FND_USER
+(
+  user_id                       NUMBER(15) not null,
+  user_name                     VARCHAR2(100) not null,
+  last_update_date              DATE not null,
+  last_updated_by               NUMBER(15) not null,
+  creation_date                 DATE not null,
+  created_by                    NUMBER(15) not null,
+  last_update_login             NUMBER(15),
+  encrypted_foundation_password VARCHAR2(100) not null,
+  encrypted_user_password       VARCHAR2(100) not null,
+  session_number                NUMBER not null,
+  start_date                    DATE not null,
+  end_date                      DATE,
+  description                   VARCHAR2(240),
+  last_logon_date               DATE,
+  password_date                 DATE,
+  password_accesses_left        NUMBER(15),
+  password_lifespan_accesses    NUMBER(15),
+  password_lifespan_days        NUMBER(15),
+  employee_id                   NUMBER(15),
+  email_address                 VARCHAR2(240),
+  fax                           VARCHAR2(80),
+  customer_id                   NUMBER(15),
+  supplier_id                   NUMBER(15),
+  web_password                  VARCHAR2(240),
+  user_guid                     RAW(16),
+  gcn_code_combination_id       NUMBER(15),
+  person_party_id               NUMBER
+)
+;
+create index GG_ADMIN.FND_USER_F1 on GG_ADMIN.FND_USER (UPPER(EMAIL_ADDRESS));
+create index GG_ADMIN.FND_USER_N1 on GG_ADMIN.FND_USER (EMPLOYEE_ID);
+create index GG_ADMIN.FND_USER_N2 on GG_ADMIN.FND_USER (CUSTOMER_ID);
+create index GG_ADMIN.FND_USER_N3 on GG_ADMIN.FND_USER (SUPPLIER_ID);
+create index GG_ADMIN.FND_USER_N4 on GG_ADMIN.FND_USER (PERSON_PARTY_ID);
+create index GG_ADMIN.FND_USER_N5 on GG_ADMIN.FND_USER (USER_GUID);
+create unique index GG_ADMIN.FND_USER_U1 on GG_ADMIN.FND_USER (USER_ID);
+create unique index GG_ADMIN.FND_USER_U2 on GG_ADMIN.FND_USER (USER_NAME);
+

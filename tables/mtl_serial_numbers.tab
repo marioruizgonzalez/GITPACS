@@ -1,0 +1,502 @@
+create table GG_ADMIN.MTL_SERIAL_NUMBERS
+(
+  inventory_item_id         NUMBER not null,
+  serial_number             VARCHAR2(30) not null,
+  last_update_date          DATE not null,
+  last_updated_by           NUMBER not null,
+  creation_date             DATE not null,
+  created_by                NUMBER not null,
+  last_update_login         NUMBER,
+  request_id                NUMBER,
+  program_application_id    NUMBER,
+  program_id                NUMBER,
+  program_update_date       DATE,
+  initialization_date       DATE not null,
+  completion_date           DATE,
+  ship_date                 DATE,
+  current_status            NUMBER,
+  revision                  VARCHAR2(3),
+  lot_number                VARCHAR2(80),
+  fixed_asset_tag           VARCHAR2(10),
+  reserved_order_id         NUMBER,
+  parent_item_id            NUMBER,
+  parent_serial_number      VARCHAR2(30),
+  end_item_unit_number      VARCHAR2(30),
+  original_wip_entity_id    NUMBER,
+  original_unit_vendor_id   NUMBER,
+  vendor_serial_number      VARCHAR2(30),
+  vendor_lot_number         VARCHAR2(30),
+  last_txn_source_type_id   NUMBER,
+  last_transaction_id       NUMBER,
+  last_receipt_issue_type   NUMBER,
+  last_txn_source_name      VARCHAR2(80),
+  last_txn_source_id        NUMBER,
+  descriptive_text          VARCHAR2(240),
+  current_subinventory_code VARCHAR2(10),
+  current_locator_id        NUMBER,
+  current_organization_id   NUMBER not null,
+  attribute_category        VARCHAR2(30),
+  attribute1                VARCHAR2(150),
+  attribute2                VARCHAR2(150),
+  attribute3                VARCHAR2(150),
+  attribute4                VARCHAR2(150),
+  attribute5                VARCHAR2(150),
+  attribute6                VARCHAR2(150),
+  attribute7                VARCHAR2(150),
+  attribute8                VARCHAR2(150),
+  attribute9                VARCHAR2(150),
+  attribute10               VARCHAR2(150),
+  attribute11               VARCHAR2(150),
+  attribute12               VARCHAR2(150),
+  attribute13               VARCHAR2(150),
+  attribute14               VARCHAR2(150),
+  attribute15               VARCHAR2(150),
+  group_mark_id             NUMBER,
+  line_mark_id              NUMBER,
+  lot_line_mark_id          NUMBER,
+  gen_object_id             NUMBER not null,
+  serial_attribute_category VARCHAR2(30),
+  country_of_origin         VARCHAR2(30),
+  origination_date          DATE,
+  c_attribute1              VARCHAR2(150),
+  c_attribute2              VARCHAR2(150),
+  c_attribute3              VARCHAR2(150),
+  c_attribute4              VARCHAR2(150),
+  c_attribute5              VARCHAR2(150),
+  c_attribute6              VARCHAR2(150),
+  c_attribute7              VARCHAR2(150),
+  c_attribute8              VARCHAR2(150),
+  c_attribute9              VARCHAR2(150),
+  c_attribute10             VARCHAR2(150),
+  c_attribute11             VARCHAR2(150),
+  c_attribute12             VARCHAR2(150),
+  c_attribute13             VARCHAR2(150),
+  c_attribute14             VARCHAR2(150),
+  c_attribute15             VARCHAR2(150),
+  c_attribute16             VARCHAR2(150),
+  c_attribute17             VARCHAR2(150),
+  c_attribute18             VARCHAR2(150),
+  c_attribute19             VARCHAR2(150),
+  c_attribute20             VARCHAR2(150),
+  c_attribute21             VARCHAR2(150),
+  c_attribute22             VARCHAR2(150),
+  c_attribute23             VARCHAR2(150),
+  c_attribute24             VARCHAR2(150),
+  c_attribute25             VARCHAR2(150),
+  c_attribute26             VARCHAR2(150),
+  c_attribute27             VARCHAR2(150),
+  c_attribute28             VARCHAR2(150),
+  c_attribute29             VARCHAR2(150),
+  c_attribute30             VARCHAR2(150),
+  d_attribute1              DATE,
+  d_attribute2              DATE,
+  d_attribute3              DATE,
+  d_attribute4              DATE,
+  d_attribute5              DATE,
+  d_attribute6              DATE,
+  d_attribute7              DATE,
+  d_attribute8              DATE,
+  d_attribute9              DATE,
+  d_attribute10             DATE,
+  d_attribute11             DATE,
+  d_attribute12             DATE,
+  d_attribute13             DATE,
+  d_attribute14             DATE,
+  d_attribute15             DATE,
+  d_attribute16             DATE,
+  d_attribute17             DATE,
+  d_attribute18             DATE,
+  d_attribute19             DATE,
+  d_attribute20             DATE,
+  n_attribute1              NUMBER,
+  n_attribute2              NUMBER,
+  n_attribute3              NUMBER,
+  n_attribute4              NUMBER,
+  n_attribute5              NUMBER,
+  n_attribute6              NUMBER,
+  n_attribute7              NUMBER,
+  n_attribute8              NUMBER,
+  n_attribute9              NUMBER,
+  n_attribute10             NUMBER,
+  n_attribute11             NUMBER,
+  n_attribute12             NUMBER,
+  n_attribute13             NUMBER,
+  n_attribute14             NUMBER,
+  n_attribute15             NUMBER,
+  n_attribute16             NUMBER,
+  n_attribute17             NUMBER,
+  n_attribute18             NUMBER,
+  n_attribute19             NUMBER,
+  n_attribute20             NUMBER,
+  n_attribute21             NUMBER,
+  n_attribute22             NUMBER,
+  n_attribute23             NUMBER,
+  n_attribute24             NUMBER,
+  n_attribute25             NUMBER,
+  n_attribute26             NUMBER,
+  n_attribute27             NUMBER,
+  n_attribute28             NUMBER,
+  n_attribute29             NUMBER,
+  n_attribute30             NUMBER,
+  status_id                 NUMBER default 1,
+  territory_code            VARCHAR2(30),
+  cost_group_id             NUMBER,
+  time_since_new            NUMBER,
+  cycles_since_new          NUMBER,
+  time_since_overhaul       NUMBER,
+  cycles_since_overhaul     NUMBER,
+  time_since_repair         NUMBER,
+  cycles_since_repair       NUMBER,
+  time_since_visit          NUMBER,
+  cycles_since_visit        NUMBER,
+  time_since_mark           NUMBER,
+  cycles_since_mark         NUMBER,
+  number_of_repairs         NUMBER,
+  lpn_id                    NUMBER,
+  inspection_status         NUMBER,
+  previous_status           NUMBER,
+  lpn_txn_error_flag        VARCHAR2(1),
+  wip_accounting_class_code VARCHAR2(10),
+  maintainable_flag         VARCHAR2(1),
+  owning_department_id      NUMBER,
+  network_asset_flag        VARCHAR2(1),
+  fa_asset_id               NUMBER,
+  pn_location_id            NUMBER,
+  eam_location_id           NUMBER,
+  asset_criticality_code    VARCHAR2(30),
+  category_id               NUMBER,
+  prod_organization_id      NUMBER,
+  equipment_item_id         NUMBER,
+  eqp_serial_number         VARCHAR2(30),
+  organization_type         NUMBER,
+  owning_organization_id    NUMBER,
+  owning_tp_type            NUMBER,
+  planning_organization_id  NUMBER,
+  planning_tp_type          NUMBER,
+  onhand_quantities_id      NUMBER,
+  wip_entity_id             NUMBER,
+  operation_seq_num         NUMBER,
+  intraoperation_step_type  NUMBER,
+  eam_instantiation_flag    VARCHAR2(1),
+  eam_linear_location_id    NUMBER,
+  dependent_asset_flag      VARCHAR2(1),
+  reservation_id            NUMBER,
+  availability_type         NUMBER,
+  inventory_atp_code        NUMBER,
+  reservable_type           NUMBER,
+  parent_lot_number         VARCHAR2(30),
+  operational_log_flag      VARCHAR2(1),
+  operational_status_flag   NUMBER,
+  mcc_code                  VARCHAR2(30)
+)
+;
+comment on table GG_ADMIN.MTL_SERIAL_NUMBERS
+  is 'Serial number definitions ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.inventory_item_id
+  is 'Inventory item identifier ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.serial_number
+  is 'Serial number ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.last_update_date
+  is 'Standard Who column ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.last_updated_by
+  is 'Standard Who column ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.creation_date
+  is 'Standard Who column ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.created_by
+  is 'Standard Who column ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.last_update_login
+  is 'Standard Who column ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.request_id
+  is 'Standard Who column ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.program_application_id
+  is 'Standard Who column ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.program_id
+  is 'Standard Who column ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.program_update_date
+  is 'Standard Who column ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.initialization_date
+  is 'Unit initialization date ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.completion_date
+  is 'Unit completion date ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.ship_date
+  is 'Unit ship date ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.current_status
+  is 'Current status ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.revision
+  is 'Inventory item revision code ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.lot_number
+  is 'Lot number ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.fixed_asset_tag
+  is 'Unit fixed asset tag number ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.reserved_order_id
+  is 'Scheduled sales order reservation ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.parent_item_id
+  is 'Component parent part number ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.parent_serial_number
+  is 'Component parent serial number ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.end_item_unit_number
+  is 'Model unit number ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.original_wip_entity_id
+  is 'Original WIP entity id ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.original_unit_vendor_id
+  is 'Original unit supplier code ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.vendor_serial_number
+  is 'Supplier serial number ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.vendor_lot_number
+  is 'Supplier lot number ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.last_txn_source_type_id
+  is 'Last transaction source type identifier ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.last_transaction_id
+  is 'Last transaction identifier ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.last_receipt_issue_type
+  is 'Last transaction type ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.last_txn_source_name
+  is 'Last transaction source name ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.last_txn_source_id
+  is 'Last transaction source identifier ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.descriptive_text
+  is 'Unit descriptive text ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.current_subinventory_code
+  is 'Current subinventory name ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.current_locator_id
+  is 'Current location identifier ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.current_organization_id
+  is 'Organization where the serial number is currently stored ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.attribute_category
+  is 'Descriptive flexfield structure defining column ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.attribute1
+  is 'Descriptive flexfield segment ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.attribute2
+  is 'Descriptive flexfield segment ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.attribute3
+  is 'Descriptive flexfield segment ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.attribute4
+  is 'Descriptive flexfield segment ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.attribute5
+  is 'Descriptive flexfield segment ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.attribute6
+  is 'Descriptive flexfield segment ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.attribute7
+  is 'Descriptive flexfield segment ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.attribute8
+  is 'Descriptive flexfield segment ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.attribute9
+  is 'Descriptive flexfield segment ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.attribute10
+  is 'Descriptive flexfield segment ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.attribute11
+  is 'Descriptive flexfield segment ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.attribute12
+  is 'Descriptive flexfield segment ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.attribute13
+  is 'Descriptive flexfield segment ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.attribute14
+  is 'Descriptive flexfield segment ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.attribute15
+  is 'Descriptive flexfield segment ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.group_mark_id
+  is 'Group identifier (used by Oracle Inventory  for ensuring that serial numbers used by one user''s session do not become available incorrectly to another user) ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.line_mark_id
+  is 'Used by Oracle Inventory  for ensuring that serial numbers used by one user''s session do not become available incorrectly to another user. The column is used by Oracle Inventory''s serialnumber marking and unmarking routines ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.lot_line_mark_id
+  is 'Identifier used in serial number marking and unmarking routines ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.gen_object_id
+  is 'Genealogy object identifier ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.serial_attribute_category
+  is 'Descriptive flexfield structure defining column - Usedby WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.origination_date
+  is 'Creation  Date of the serial number such as manufacture date. - Used by WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.c_attribute1
+  is 'Descriptive flexfield segment- Used by WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.c_attribute2
+  is 'Descriptive flexfield segment- Used by WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.c_attribute3
+  is 'Descriptive flexfield segment- Used by WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.c_attribute4
+  is 'Descriptive flexfield segment- Used by WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.c_attribute5
+  is 'Descriptive flexfield segment- Used by WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.c_attribute6
+  is 'Descriptive flexfield segment- Used by WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.c_attribute7
+  is 'Descriptive flexfield segment- Used by WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.c_attribute8
+  is 'Descriptive flexfield segment- Used by WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.c_attribute9
+  is 'Descriptive flexfield segment- Used by WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.c_attribute10
+  is 'Descriptive flexfield segment- Used by WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.c_attribute11
+  is 'Descriptive flexfield segment- Used by WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.c_attribute12
+  is 'Descriptive flexfield segment- Used by WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.c_attribute13
+  is 'Descriptive flexfield segment- Used by WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.c_attribute14
+  is 'Descriptive flexfield segment- Used by WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.c_attribute15
+  is 'Descriptive flexfield segment- Used by WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.c_attribute16
+  is 'Descriptive flexfield segment- Used by WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.c_attribute17
+  is 'Descriptive flexfield segment- Used by WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.c_attribute18
+  is 'Descriptive flexfield segment- Used by WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.c_attribute19
+  is 'Descriptive flexfield segment- Used by WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.c_attribute20
+  is 'Descriptive flexfield segment- Used by WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.d_attribute1
+  is 'Descriptive flexfield segment- Used by WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.d_attribute2
+  is 'Descriptive flexfield segment- Used by WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.d_attribute3
+  is 'Descriptive flexfield segment- Used by WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.d_attribute4
+  is 'Descriptive flexfield segment- Used by WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.d_attribute5
+  is 'Descriptive flexfield segment- Used by WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.d_attribute6
+  is 'Descriptive flexfield segment- Used by WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.d_attribute7
+  is 'Descriptive flexfield segment- Used by WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.d_attribute8
+  is 'Descriptive flexfield segment- Used by WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.d_attribute9
+  is 'Descriptive flexfield segment- Used by WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.d_attribute10
+  is 'Descriptive flexfield segment- Used by WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.n_attribute1
+  is 'Descriptive flexfield segment- Used by WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.n_attribute2
+  is 'Descriptive flexfield segment- Used by WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.n_attribute3
+  is 'Descriptive flexfield segment- Used by WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.n_attribute4
+  is 'Descriptive flexfield segment- Used by WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.n_attribute5
+  is 'Descriptive flexfield segment- Used by WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.n_attribute6
+  is 'Descriptive flexfield segment- Used by WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.n_attribute7
+  is 'Descriptive flexfield segment- Used by WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.n_attribute8
+  is 'Descriptive flexfield segment- Used by WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.n_attribute9
+  is 'Descriptive flexfield segment- Used by WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.n_attribute10
+  is 'Descriptive flexfield segment- Used by WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.status_id
+  is 'Status identifier   - Used by WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.territory_code
+  is 'Territory code for Country of Origin-- Usedby WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.cost_group_id
+  is 'Cost Group Identifie - Used by WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.time_since_new
+  is 'Time since new for MRO industry  - Used by WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.cycles_since_new
+  is 'Cycles since new for MRO industry  - Used by WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.time_since_overhaul
+  is 'Time Since overhaul for MRO industry  - Used by WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.cycles_since_overhaul
+  is 'Cycles since overhaul for MRO industry  - Used by WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.time_since_repair
+  is 'Time Since repair for MRO industry  - Used by WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.cycles_since_repair
+  is 'Cycles Since repair for MRO industry  - Used by WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.time_since_visit
+  is 'Time since Visit for MRO industry  - Used by WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.cycles_since_visit
+  is 'Cycles Since Visit  for MRO industry - Used by WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.time_since_mark
+  is 'Time since Mark for MRO industry  - Used by WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.cycles_since_mark
+  is 'Cycles Since Mark for MRO industry  - Used by WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.number_of_repairs
+  is 'Number of repairs for MRO industry  - Used by WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.lpn_id
+  is 'License Plate Number Identifier of the item  - Used by WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.inspection_status
+  is ' Status after Inspection  of the Serial Number - Usedby WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.previous_status
+  is 'Previous Status - Usedby WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.lpn_txn_error_flag
+  is 'Error flag for LPN Transaction -- Usedby WMS only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.wip_accounting_class_code
+  is 'WIP Accounting class code -- Used by EAM ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.maintainable_flag
+  is 'Maintainable flag -- Used by EAM ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.owning_department_id
+  is 'Owning Department Identifier  - Used by EAM only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.network_asset_flag
+  is 'Network asset flag -- Used by EAM ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.fa_asset_id
+  is 'FA Asset Identifier  - Used by EAM only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.pn_location_id
+  is 'PN Location Identifier  - Used by EAM only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.eam_location_id
+  is 'EAM Location Identifier  - Used by EAM only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.asset_criticality_code
+  is 'Asset criticality code -- Used by EAM ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.category_id
+  is 'Category Identifier  - Used by EAM only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.prod_organization_id
+  is 'Prod Organization Identifier  - Used by EAM only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.equipment_item_id
+  is 'Equipment Item Identifier  - Used by EAM only ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.eqp_serial_number
+  is 'Equipment serial number -- Used by EAM ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.organization_type
+  is 'Organization Type. The values are based on MTL_TP_TYPES lookup. ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.owning_organization_id
+  is 'Owning organization identifier ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.owning_tp_type
+  is 'Owning Trading Partner Type. The values are based on MTL_TP_TYPES lookup. ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.planning_organization_id
+  is 'Planning organization identifier ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.planning_tp_type
+  is 'Planning Trading Partner Type. The values are based on MTL_TP_TYPES lookup. ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.onhand_quantities_id
+  is 'Stores reference to the row in MTL_ONHAND_QUANTITIES which was created when the serial number came into stores. ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.wip_entity_id
+  is 'Stores reference to WIP Entity Identifier in WIP_ENTITIES table ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.operation_seq_num
+  is 'Stores reference to WIP Operation Sequence Number ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.intraoperation_step_type
+  is 'Stores Reference to Lookup Code for Intraoperational Step in mfg_lookups ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.eam_instantiation_flag
+  is 'Flag to indicate if EAM-rebuild serial number instantiation setups are complete. Setup includes copying parent item information like pm definition, meter, activity association into rebuild serial. ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.eam_linear_location_id
+  is 'Linear Location Id ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.dependent_asset_flag
+  is 'Dependent asset flag -- Used by EAM ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.reservation_id
+  is 'Conatins the reservation id of the corresponding reservation record for which the serial number is reserved ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.availability_type
+  is 'Subinventory availability code ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.inventory_atp_code
+  is 'Inventory available to promise code ';
+comment on column GG_ADMIN.MTL_SERIAL_NUMBERS.reservable_type
+  is 'Hard reservation eligibility ';
+create index GG_ADMIN.MTL_SERIAL_NUMBERS_N1 on GG_ADMIN.MTL_SERIAL_NUMBERS (CURRENT_ORGANIZATION_ID, CURRENT_SUBINVENTORY_CODE, CURRENT_LOCATOR_ID);
+create index GG_ADMIN.MTL_SERIAL_NUMBERS_N11 on GG_ADMIN.MTL_SERIAL_NUMBERS (INVENTORY_ITEM_ID, CURRENT_ORGANIZATION_ID, RESERVATION_ID);
+create index GG_ADMIN.MTL_SERIAL_NUMBERS_N12 on GG_ADMIN.MTL_SERIAL_NUMBERS (UPPER(SERIAL_NUMBER), INVENTORY_ITEM_ID);
+create index GG_ADMIN.MTL_SERIAL_NUMBERS_N13 on GG_ADMIN.MTL_SERIAL_NUMBERS (RESERVATION_ID);
+create index GG_ADMIN.MTL_SERIAL_NUMBERS_N14 on GG_ADMIN.MTL_SERIAL_NUMBERS (LAST_UPDATE_DATE)
+  nologging;
+create index GG_ADMIN.MTL_SERIAL_NUMBERS_N2 on GG_ADMIN.MTL_SERIAL_NUMBERS (INVENTORY_ITEM_ID, CURRENT_STATUS, CURRENT_ORGANIZATION_ID, CURRENT_LOCATOR_ID);
+create index GG_ADMIN.MTL_SERIAL_NUMBERS_N3 on GG_ADMIN.MTL_SERIAL_NUMBERS (ORIGINAL_UNIT_VENDOR_ID, VENDOR_SERIAL_NUMBER);
+create index GG_ADMIN.MTL_SERIAL_NUMBERS_N4 on GG_ADMIN.MTL_SERIAL_NUMBERS (CURRENT_ORGANIZATION_ID, SERIAL_NUMBER, INVENTORY_ITEM_ID);
+create index GG_ADMIN.MTL_SERIAL_NUMBERS_N5 on GG_ADMIN.MTL_SERIAL_NUMBERS (GROUP_MARK_ID, LINE_MARK_ID, LOT_LINE_MARK_ID);
+create index GG_ADMIN.MTL_SERIAL_NUMBERS_N6 on GG_ADMIN.MTL_SERIAL_NUMBERS (CURRENT_ORGANIZATION_ID, INVENTORY_ITEM_ID, CURRENT_SUBINVENTORY_CODE, CURRENT_STATUS);
+create index GG_ADMIN.MTL_SERIAL_NUMBERS_N7 on GG_ADMIN.MTL_SERIAL_NUMBERS (LPN_ID);
+create index GG_ADMIN.MTL_SERIAL_NUMBERS_N8 on GG_ADMIN.MTL_SERIAL_NUMBERS (ORIGINAL_WIP_ENTITY_ID);
+create index GG_ADMIN.MTL_SERIAL_NUMBERS_N9 on GG_ADMIN.MTL_SERIAL_NUMBERS (WIP_ENTITY_ID, OPERATION_SEQ_NUM, INTRAOPERATION_STEP_TYPE);
+create unique index GG_ADMIN.MTL_SERIAL_NUMBERS_U1 on GG_ADMIN.MTL_SERIAL_NUMBERS (INVENTORY_ITEM_ID, SERIAL_NUMBER);
+create unique index GG_ADMIN.MTL_SERIAL_NUMBERS_U2 on GG_ADMIN.MTL_SERIAL_NUMBERS (GEN_OBJECT_ID);
+create index GG_ADMIN.MTL_SERIAL_NUMBERS_U3 on GG_ADMIN.MTL_SERIAL_NUMBERS (CURRENT_STATUS)
+  nologging;
+create index GG_ADMIN.MTL_SERIAL_NUMBERS_U4 on GG_ADMIN.MTL_SERIAL_NUMBERS (SERIAL_NUMBER, INVENTORY_ITEM_ID);
+create index GG_ADMIN.MTL_SERIAL_NUMBERS_U5 on GG_ADMIN.MTL_SERIAL_NUMBERS (ATTRIBUTE3)
+  nologging;
+

@@ -1,0 +1,3 @@
+create or replace synonym GG_ADMIN.SND_ROLE_MASTER
+  for IPACS.SND_ROLE_MASTER;
+

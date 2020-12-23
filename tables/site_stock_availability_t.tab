@@ -1,0 +1,36 @@
+create table GG_ADMIN.SITE_STOCK_AVAILABILITY_T
+(
+  instance_id            NUMBER not null,
+  inventory_id           NUMBER not null,
+  master_organization_id NUMBER not null,
+  serial_number          VARCHAR2(90),
+  fa_number              VARCHAR2(240),
+  quantity               NUMBER not null,
+  uom                    VARCHAR2(9) not null,
+  location_type_code     VARCHAR2(90),
+  location_id            NUMBER,
+  organization_id        NUMBER,
+  subinventory_name      VARCHAR2(30),
+  locator_id             NUMBER,
+  project_id             NUMBER,
+  project_task_id        NUMBER,
+  install_date           DATE,
+  return_by_date         DATE,
+  actual_return_date     DATE,
+  add_date               DATE not null,
+  mod_date               DATE not null,
+  install_location_id    NUMBER,
+  capex                  NUMBER(15),
+  asset_category         VARCHAR2(630),
+  asset_id               NUMBER(15),
+  asset_number           VARCHAR2(45),
+  current_units          NUMBER,
+  asset_type             VARCHAR2(33),
+  tag_number             VARCHAR2(45),
+  asset_category_id      NUMBER(15),
+  serial_number_fa       VARCHAR2(105),
+  last_update_date       DATE,
+  creation_date          DATE
+)
+;
+

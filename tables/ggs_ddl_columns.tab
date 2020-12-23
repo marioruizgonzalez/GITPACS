@@ -1,0 +1,21 @@
+create table GG_ADMIN.GGS_DDL_COLUMNS
+(
+  seqno       NUMBER not null,
+  name        VARCHAR2(400),
+  pos         NUMBER,
+  type        VARCHAR2(130),
+  length      NUMBER,
+  isnull      VARCHAR2(30),
+  prec        NUMBER,
+  scale       NUMBER,
+  charsetid   VARCHAR2(30),
+  charsetform VARCHAR2(50),
+  segpos      NUMBER,
+  altname     VARCHAR2(400),
+  alttype     VARCHAR2(130),
+  altprec     NUMBER,
+  altcharused VARCHAR2(50),
+  altxmltype  VARCHAR2(50)
+)
+;
+

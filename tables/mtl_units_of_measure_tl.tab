@@ -1,0 +1,42 @@
+create table GG_ADMIN.MTL_UNITS_OF_MEASURE_TL
+(
+  unit_of_measure        VARCHAR2(25) not null,
+  uom_code               VARCHAR2(3) not null,
+  uom_class              VARCHAR2(10) not null,
+  base_uom_flag          VARCHAR2(1) not null,
+  unit_of_measure_tl     VARCHAR2(25) not null,
+  last_update_date       DATE not null,
+  last_updated_by        NUMBER not null,
+  created_by             NUMBER not null,
+  creation_date          DATE not null,
+  last_update_login      NUMBER,
+  disable_date           DATE,
+  description            VARCHAR2(50),
+  language               VARCHAR2(4) not null,
+  source_lang            VARCHAR2(4) not null,
+  attribute_category     VARCHAR2(30),
+  attribute1             VARCHAR2(150),
+  attribute2             VARCHAR2(150),
+  attribute3             VARCHAR2(150),
+  attribute4             VARCHAR2(150),
+  attribute5             VARCHAR2(150),
+  attribute6             VARCHAR2(150),
+  attribute7             VARCHAR2(150),
+  attribute8             VARCHAR2(150),
+  attribute9             VARCHAR2(150),
+  attribute10            VARCHAR2(150),
+  attribute11            VARCHAR2(150),
+  attribute12            VARCHAR2(150),
+  attribute13            VARCHAR2(150),
+  attribute14            VARCHAR2(150),
+  attribute15            VARCHAR2(150),
+  request_id             NUMBER,
+  program_application_id NUMBER,
+  program_id             NUMBER,
+  program_update_date    DATE
+)
+;
+create index GG_ADMIN.MTL_UNITS_OF_MEASURE_TL_N1 on GG_ADMIN.MTL_UNITS_OF_MEASURE_TL (UOM_CLASS);
+create unique index GG_ADMIN.MTL_UNITS_OF_MEASURE_TL_U1 on GG_ADMIN.MTL_UNITS_OF_MEASURE_TL (UNIT_OF_MEASURE, LANGUAGE);
+create unique index GG_ADMIN.MTL_UNITS_OF_MEASURE_TL_U2 on GG_ADMIN.MTL_UNITS_OF_MEASURE_TL (UOM_CODE, LANGUAGE);
+

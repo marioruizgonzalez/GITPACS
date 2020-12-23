@@ -1,0 +1,15 @@
+create table GG_ADMIN.INV_AVAILABILITY
+(
+  org_id       NUMBER(15) not null,
+  locator      VARCHAR2(40) not null,
+  sku_id       VARCHAR2(100) not null,
+  count        VARCHAR2(100) not null,
+  add_date     DATE not null,
+  mod_date     DATE not null,
+  subinventory VARCHAR2(10) not null,
+  uom          VARCHAR2(10) not null,
+  serial_no    VARCHAR2(20) not null,
+  lot_no       VARCHAR2(20) not null
+)
+nologging;
+

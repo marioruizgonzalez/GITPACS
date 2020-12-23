@@ -1,0 +1,13 @@
+create table GG_ADMIN.INTERSITE_TRANSFER
+(
+  id               NUMBER not null,
+  loc_source_id    NUMBER not null,
+  loc_dest_id      NUMBER not null,
+  quantity         NUMBER default 1 not null,
+  instance_id      NUMBER(15),
+  asset_id         NUMBER(15) not null,
+  date_transf      DATE not null,
+  last_update_date DATE
+)
+;
+

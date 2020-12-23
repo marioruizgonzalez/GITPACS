@@ -1,0 +1,9 @@
+create table GG_ADMIN.TBL_CONTROL_TRANSACTION_ID
+(
+  table_origin   NUMBER,
+  transaction_id NUMBER
+)
+;
+comment on column GG_ADMIN.TBL_CONTROL_TRANSACTION_ID.table_origin
+  is '1.MTL_TXN_REQUEST_LINES-2.MTL_MATERIAL_TRANSACTIONS-3.MTL_UNIT_TRANSACTIONS';
+

@@ -1,0 +1,13 @@
+create table GG_ADMIN.INVENTORY_RECEIVING
+(
+  trx_tmp_id        NUMBER(15) not null,
+  process_status    NUMBER(2) not null,
+  error_code        VARCHAR2(100),
+  error_description VARCHAR2(1000),
+  date_processed    DATE not null,
+  last_update_date  DATE not null
+)
+;
+alter table GG_ADMIN.INVENTORY_RECEIVING
+  add constraint PK_INV_RECV primary key (TRX_TMP_ID);
+

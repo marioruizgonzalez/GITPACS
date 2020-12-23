@@ -1,0 +1,14 @@
+create table GG_ADMIN.NOTIFICATION_CONFIG
+(
+  serial_num   NUMBER not null,
+  table_name   VARCHAR2(50) not null,
+  operation    VARCHAR2(20) not null,
+  last_updated TIMESTAMP(6),
+  column_name  VARCHAR2(50),
+  description  VARCHAR2(500)
+)
+nologging;
+alter table GG_ADMIN.NOTIFICATION_CONFIG
+  add constraint NOTIFICATION_CONFIG_PK primary key (SERIAL_NUM);
+alter index GG_ADMIN.NOTIFICATION_CONFIG_PK nologging;
+

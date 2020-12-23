@@ -1,0 +1,24 @@
+create table GG_ADMIN.MTL_ITEM_CATEGORIES
+(
+  inventory_item_id      NUMBER not null,
+  organization_id        NUMBER not null,
+  category_set_id        NUMBER not null,
+  category_id            NUMBER not null,
+  last_update_date       DATE not null,
+  last_updated_by        NUMBER not null,
+  creation_date          DATE not null,
+  created_by             NUMBER not null,
+  last_update_login      NUMBER,
+  request_id             NUMBER,
+  program_application_id NUMBER,
+  program_id             NUMBER,
+  program_update_date    DATE,
+  wh_update_date         DATE
+)
+;
+create index GG_ADMIN.MTL_ITEM_CATEGORIES_N1 on GG_ADMIN.MTL_ITEM_CATEGORIES (ORGANIZATION_ID, CATEGORY_SET_ID, CATEGORY_ID);
+create index GG_ADMIN.MTL_ITEM_CATEGORIES_N2 on GG_ADMIN.MTL_ITEM_CATEGORIES (WH_UPDATE_DATE);
+create index GG_ADMIN.MTL_ITEM_CATEGORIES_N3 on GG_ADMIN.MTL_ITEM_CATEGORIES (CATEGORY_SET_ID, CATEGORY_ID, ORGANIZATION_ID);
+create index GG_ADMIN.MTL_ITEM_CATEGORIES_N4 on GG_ADMIN.MTL_ITEM_CATEGORIES (CATEGORY_SET_ID, LAST_UPDATE_DATE);
+create unique index GG_ADMIN.MTL_ITEM_CATEGORIES_U1 on GG_ADMIN.MTL_ITEM_CATEGORIES (ORGANIZATION_ID, INVENTORY_ITEM_ID, CATEGORY_SET_ID, CATEGORY_ID);
+

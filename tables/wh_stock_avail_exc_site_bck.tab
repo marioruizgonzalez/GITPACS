@@ -1,0 +1,15 @@
+create table GG_ADMIN.WH_STOCK_AVAIL_EXC_SITE_BCK
+(
+  org_id       NUMBER(15) not null,
+  locator      VARCHAR2(40) not null,
+  sku_id       VARCHAR2(100) not null,
+  qty          NUMBER(8),
+  add_date     DATE not null,
+  mod_date     DATE,
+  subinventory VARCHAR2(10) not null,
+  uom          VARCHAR2(10) not null,
+  serial_no    VARCHAR2(20),
+  lot_no       VARCHAR2(20)
+)
+;
+

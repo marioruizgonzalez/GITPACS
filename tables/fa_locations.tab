@@ -1,0 +1,44 @@
+create table GG_ADMIN.FA_LOCATIONS
+(
+  location_id             NUMBER(15) not null,
+  segment1                VARCHAR2(30),
+  segment2                VARCHAR2(30),
+  segment3                VARCHAR2(30),
+  segment4                VARCHAR2(30),
+  segment5                VARCHAR2(30),
+  segment6                VARCHAR2(30),
+  segment7                VARCHAR2(30),
+  summary_flag            VARCHAR2(1) not null,
+  enabled_flag            VARCHAR2(1) not null,
+  start_date_active       DATE,
+  end_date_active         DATE,
+  last_update_date        DATE not null,
+  last_updated_by         NUMBER(15) not null,
+  last_update_login       NUMBER(15),
+  attribute1              VARCHAR2(150),
+  attribute2              VARCHAR2(150),
+  attribute3              VARCHAR2(150),
+  attribute4              VARCHAR2(150),
+  attribute5              VARCHAR2(150),
+  attribute6              VARCHAR2(150),
+  attribute7              VARCHAR2(150),
+  attribute8              VARCHAR2(150),
+  attribute9              VARCHAR2(150),
+  attribute10             VARCHAR2(150),
+  attribute11             VARCHAR2(150),
+  attribute12             VARCHAR2(150),
+  attribute13             VARCHAR2(150),
+  attribute14             VARCHAR2(150),
+  attribute15             VARCHAR2(150),
+  attribute_category_code VARCHAR2(30)
+)
+;
+create index GG_ADMIN.FA_LOCATIONS_N1 on GG_ADMIN.FA_LOCATIONS (SEGMENT1);
+create index GG_ADMIN.FA_LOCATIONS_N2 on GG_ADMIN.FA_LOCATIONS (SEGMENT2);
+create index GG_ADMIN.FA_LOCATIONS_N3 on GG_ADMIN.FA_LOCATIONS (SEGMENT3);
+create index GG_ADMIN.FA_LOCATIONS_N4 on GG_ADMIN.FA_LOCATIONS (SEGMENT4);
+create index GG_ADMIN.FA_LOCATIONS_N5 on GG_ADMIN.FA_LOCATIONS (SEGMENT5);
+create index GG_ADMIN.FA_LOCATIONS_N6 on GG_ADMIN.FA_LOCATIONS (SEGMENT6);
+create index GG_ADMIN.FA_LOCATIONS_N7 on GG_ADMIN.FA_LOCATIONS (SEGMENT7);
+create unique index GG_ADMIN.FA_LOCATIONS_U1 on GG_ADMIN.FA_LOCATIONS (LOCATION_ID);
+

@@ -1,0 +1,19 @@
+create table GG_ADMIN.SKU_INSTANCE_DETAIL_BCK
+(
+  transaction_id          NUMBER not null,
+  serial_number           VARCHAR2(30) not null,
+  lot_number              VARCHAR2(80),
+  inventory_item_id       NUMBER not null,
+  transaction_date        DATE not null,
+  transaction_source_name VARCHAR2(240),
+  receipt_issue_type      NUMBER,
+  ship_id                 NUMBER,
+  origination_date        DATE,
+  status_id               NUMBER,
+  product_code            VARCHAR2(5),
+  product_transaction_id  NUMBER,
+  attribute3              VARCHAR2(150),
+  attribute4              VARCHAR2(150)
+)
+nologging;
+

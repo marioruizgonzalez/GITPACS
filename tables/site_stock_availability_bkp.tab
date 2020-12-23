@@ -1,0 +1,36 @@
+create table GG_ADMIN.SITE_STOCK_AVAILABILITY_BKP
+(
+  instance_id            NUMBER(15) not null,
+  inventory_id           NUMBER(15) not null,
+  master_organization_id NUMBER(15) not null,
+  serial_number          VARCHAR2(30),
+  fa_number              VARCHAR2(80),
+  quantity               NUMBER(15) not null,
+  uom                    VARCHAR2(3) not null,
+  location_type_code     VARCHAR2(30) not null,
+  location_id            NUMBER(15) not null,
+  organization_id        NUMBER(15),
+  subinventory_name      VARCHAR2(20),
+  project_id             NUMBER(15),
+  project_task_id        NUMBER(15),
+  install_date           DATE,
+  return_by_date         DATE,
+  actual_return_date     DATE,
+  add_date               DATE not null,
+  mod_date               DATE not null,
+  install_location_id    NUMBER(15),
+  capex                  VARCHAR2(10) not null,
+  asset_category         VARCHAR2(50) not null,
+  asset_id               NUMBER(15) not null,
+  asset_number           VARCHAR2(15),
+  current_units          NUMBER not null,
+  asset_type             VARCHAR2(11) not null,
+  tag_number             VARCHAR2(15) not null,
+  asset_category_id      NUMBER(15) not null,
+  serial_number_fa       VARCHAR2(35) not null,
+  last_update_date       DATE not null,
+  creation_date          DATE not null,
+  asset_quantity         VARCHAR2(100)
+)
+;
+

@@ -1,0 +1,285 @@
+create table GG_ADMIN.HR_LOCATIONS_ALL
+(
+  location_id               NUMBER(15) not null,
+  location_code             VARCHAR2(60),
+  business_group_id         NUMBER(15),
+  description               VARCHAR2(240),
+  ship_to_location_id       NUMBER(15),
+  ship_to_site_flag         VARCHAR2(30),
+  receiving_site_flag       VARCHAR2(30),
+  bill_to_site_flag         VARCHAR2(30),
+  in_organization_flag      VARCHAR2(30),
+  office_site_flag          VARCHAR2(30),
+  designated_receiver_id    NUMBER(15),
+  inventory_organization_id NUMBER(15),
+  tax_name                  VARCHAR2(50),
+  inactive_date             DATE,
+  style                     VARCHAR2(7),
+  address_line_1            VARCHAR2(240),
+  address_line_2            VARCHAR2(240),
+  address_line_3            VARCHAR2(240),
+  town_or_city              VARCHAR2(30),
+  country                   VARCHAR2(60),
+  postal_code               VARCHAR2(30),
+  region_1                  VARCHAR2(120),
+  region_2                  VARCHAR2(120),
+  region_3                  VARCHAR2(120),
+  telephone_number_1        VARCHAR2(60),
+  telephone_number_2        VARCHAR2(60),
+  telephone_number_3        VARCHAR2(60),
+  loc_information13         VARCHAR2(150),
+  loc_information14         VARCHAR2(150),
+  loc_information15         VARCHAR2(150),
+  loc_information16         VARCHAR2(150),
+  loc_information17         VARCHAR2(150),
+  attribute_category        VARCHAR2(30),
+  attribute1                VARCHAR2(150),
+  attribute2                VARCHAR2(150),
+  attribute3                VARCHAR2(150),
+  attribute4                VARCHAR2(150),
+  attribute5                VARCHAR2(150),
+  attribute6                VARCHAR2(150),
+  attribute7                VARCHAR2(150),
+  attribute8                VARCHAR2(150),
+  attribute9                VARCHAR2(150),
+  attribute10               VARCHAR2(150),
+  attribute11               VARCHAR2(150),
+  attribute12               VARCHAR2(150),
+  attribute13               VARCHAR2(150),
+  attribute14               VARCHAR2(150),
+  attribute15               VARCHAR2(150),
+  attribute16               VARCHAR2(150),
+  attribute17               VARCHAR2(150),
+  attribute18               VARCHAR2(150),
+  attribute19               VARCHAR2(150),
+  attribute20               VARCHAR2(150),
+  global_attribute_category VARCHAR2(150),
+  global_attribute1         VARCHAR2(150),
+  global_attribute2         VARCHAR2(150),
+  global_attribute3         VARCHAR2(150),
+  global_attribute4         VARCHAR2(150),
+  global_attribute5         VARCHAR2(150),
+  global_attribute6         VARCHAR2(150),
+  global_attribute7         VARCHAR2(150),
+  global_attribute8         VARCHAR2(150),
+  global_attribute9         VARCHAR2(150),
+  global_attribute10        VARCHAR2(150),
+  global_attribute11        VARCHAR2(150),
+  global_attribute12        VARCHAR2(150),
+  global_attribute13        VARCHAR2(150),
+  global_attribute14        VARCHAR2(150),
+  global_attribute15        VARCHAR2(150),
+  global_attribute16        VARCHAR2(150),
+  global_attribute17        VARCHAR2(150),
+  global_attribute18        VARCHAR2(150),
+  global_attribute19        VARCHAR2(150),
+  global_attribute20        VARCHAR2(150),
+  last_update_date          DATE,
+  last_updated_by           NUMBER(15),
+  last_update_login         NUMBER(15),
+  created_by                NUMBER(15),
+  creation_date             DATE,
+  entered_by                NUMBER(15) not null,
+  tp_header_id              NUMBER,
+  ece_tp_location_code      VARCHAR2(35),
+  object_version_number     NUMBER(9),
+  geometry                  SDO_GEOMETRY,
+  loc_information18         VARCHAR2(150),
+  loc_information19         VARCHAR2(150),
+  loc_information20         VARCHAR2(150),
+  derived_locale            VARCHAR2(240),
+  legal_address_flag        VARCHAR2(30),
+  timezone_code             VARCHAR2(50)
+)
+nologging;
+comment on table GG_ADMIN.HR_LOCATIONS_ALL
+  is 'Work location definitions. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.location_id
+  is 'System-generated primary key column. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.location_code
+  is 'Location name. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.business_group_id
+  is 'Business Group ID associated with location. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.description
+  is 'Brief description of the location. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.ship_to_location_id
+  is 'Ship-to location foreign key. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.ship_to_site_flag
+  is 'Indicates whether items can be shipped to this location. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.receiving_site_flag
+  is 'Indicates whether this location can be used as a receiving site. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.bill_to_site_flag
+  is 'Indicates whether you can bill items to this location. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.in_organization_flag
+  is 'Indicates whether this location is an internal site. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.office_site_flag
+  is 'Indicates whether this location can be used as an office site. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.designated_receiver_id
+  is 'Person foreign key - the contact person for this location. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.inventory_organization_id
+  is 'Inventory organization foreign key. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.tax_name
+  is 'Default tax code for this location. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.inactive_date
+  is 'Date after which this location is no longer valid. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.style
+  is 'Address style - foreign key to FND_TERRITORIES. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.address_line_1
+  is '1st line of location address. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.address_line_2
+  is '2nd line of location address. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.address_line_3
+  is '3rd line of location address. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.town_or_city
+  is 'Town or city. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.country
+  is 'Country. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.postal_code
+  is 'Postal code. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.region_1
+  is 'County (US, UK); Province (CA). ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.region_2
+  is 'State (US); Province of work (CA). ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.region_3
+  is 'Additional address segment - not used by seeded address structures. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.telephone_number_1
+  is 'Telephone number. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.telephone_number_2
+  is 'Telephone number. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.telephone_number_3
+  is 'Telephone number. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.loc_information13
+  is 'Developer descriptive flexfield column. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.loc_information14
+  is 'Developer descriptive flexfield column. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.loc_information15
+  is 'Developer descriptive flexfield column. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.loc_information16
+  is 'Developer descriptive flexfield column. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.loc_information17
+  is 'Developer descriptive flexfield column. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.attribute_category
+  is 'Descriptive flexfield structure defining column. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.attribute1
+  is 'Descriptive flexfield column. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.attribute2
+  is 'Descriptive flexfield column. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.attribute3
+  is 'Descriptive flexfield column. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.attribute4
+  is 'Descriptive flexfield column. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.attribute5
+  is 'Descriptive flexfield column. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.attribute6
+  is 'Descriptive flexfield column. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.attribute7
+  is 'Descriptive flexfield column. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.attribute8
+  is 'Descriptive flexfield column. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.attribute9
+  is 'Descriptive flexfield column. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.attribute10
+  is 'Descriptive flexfield column. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.attribute11
+  is 'Descriptive flexfield column. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.attribute12
+  is 'Descriptive flexfield column. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.attribute13
+  is 'Descriptive flexfield column. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.attribute14
+  is 'Descriptive flexfield column. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.attribute15
+  is 'Descriptive flexfield column. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.attribute16
+  is 'Descriptive flexfield column. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.attribute17
+  is 'Descriptive flexfield column. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.attribute18
+  is 'Descriptive flexfield column. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.attribute19
+  is 'Descriptive flexfield column. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.attribute20
+  is 'Descriptive flexfield column. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.global_attribute_category
+  is 'Global descriptive flexlield structure defining colunm ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.global_attribute1
+  is 'Descriptive flexfield column ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.global_attribute2
+  is 'Descriptive flexfield colunm ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.global_attribute3
+  is 'Descriptive flexfield column ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.global_attribute4
+  is 'Descriptive flexfield column ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.global_attribute5
+  is 'Descriptive flexfield column ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.global_attribute6
+  is 'Descriptive flexfield column ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.global_attribute7
+  is 'Descriptive flexfield column ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.global_attribute8
+  is 'Descriptive flexfield column ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.global_attribute9
+  is 'Descriptive flexfield column ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.global_attribute10
+  is 'Descriptive flexfield column ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.global_attribute11
+  is 'Descriptive flexfield column ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.global_attribute12
+  is 'Descriptive flexfield column ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.global_attribute13
+  is 'Descriptive flexfield column ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.global_attribute14
+  is 'Descriptive flexfield column ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.global_attribute15
+  is 'Descriptive flexfield column ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.global_attribute16
+  is 'Descriptive flexfield column ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.global_attribute17
+  is 'Descriptive flexfield column ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.global_attribute18
+  is 'Descriptive flexfield column ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.global_attribute19
+  is 'Descriptive flexfield column ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.global_attribute20
+  is 'Descriptive flexfield column ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.last_update_date
+  is 'Standard Who column. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.last_updated_by
+  is 'Standard Who column. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.last_update_login
+  is 'Standard Who column. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.created_by
+  is 'Standard Who column. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.creation_date
+  is 'Standard Who column. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.entered_by
+  is 'Applications user who created this location; same as CREATED_BY. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.tp_header_id
+  is 'Unsupported in Oracle Human Resources. Used by Oracle EDI Gateway. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.ece_tp_location_code
+  is 'Unsupported in Oracle Human Resources. Used by Oracle EDI Gateway. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.object_version_number
+  is 'System-generated version of row. Increments by one with each update. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.loc_information18
+  is 'Developer descriptive flexfield column. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.loc_information19
+  is 'Developer descriptive flexfield column. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.loc_information20
+  is 'Developer descriptive flexfield column. ';
+comment on column GG_ADMIN.HR_LOCATIONS_ALL.derived_locale
+  is 'derived locale ';
+create index GG_ADMIN.HR_LOCATIONS_FK1 on GG_ADMIN.HR_LOCATIONS_ALL (INVENTORY_ORGANIZATION_ID)
+  nologging;
+create index GG_ADMIN.HR_LOCATIONS_N1 on GG_ADMIN.HR_LOCATIONS_ALL (DERIVED_LOCALE)
+  indextype is CTXSYS.CTXCAT;
+create index GG_ADMIN.HR_LOCATIONS_SPT on GG_ADMIN.HR_LOCATIONS_ALL (GEOMETRY)
+  indextype is MDSYS.SPATIAL_INDEX;
+create index GG_ADMIN.HR_LOCATIONS_UK3 on GG_ADMIN.HR_LOCATIONS_ALL (ECE_TP_LOCATION_CODE)
+  nologging;
+alter table GG_ADMIN.HR_LOCATIONS_ALL
+  add constraint HR_LOCATIONS_PK primary key (LOCATION_ID);
+alter index GG_ADMIN.HR_LOCATIONS_PK nologging;
+alter table GG_ADMIN.HR_LOCATIONS_ALL
+  add constraint HR_LOCATIONS_UK2 unique (LOCATION_CODE, BUSINESS_GROUP_ID);
+alter index GG_ADMIN.HR_LOCATIONS_UK2 nologging;
+

@@ -1,0 +1,21 @@
+create table GG_ADMIN.MTL_DESCR_ELEMENT_VALUES
+(
+  inventory_item_id      NUMBER not null,
+  element_name           VARCHAR2(30) not null,
+  last_update_date       DATE not null,
+  last_updated_by        NUMBER not null,
+  creation_date          DATE not null,
+  created_by             NUMBER not null,
+  last_update_login      NUMBER,
+  element_value          VARCHAR2(30),
+  request_id             NUMBER,
+  program_application_id NUMBER,
+  program_id             NUMBER,
+  program_update_date    DATE,
+  default_element_flag   VARCHAR2(1) not null,
+  element_sequence       NUMBER not null
+)
+;
+create index GG_ADMIN.MTL_DESCR_ELEMENT_VALUES_N1 on GG_ADMIN.MTL_DESCR_ELEMENT_VALUES (ELEMENT_NAME, ELEMENT_VALUE);
+create unique index GG_ADMIN.MTL_DESCR_ELEMENT_VALUES_U1 on GG_ADMIN.MTL_DESCR_ELEMENT_VALUES (INVENTORY_ITEM_ID, ELEMENT_NAME);
+

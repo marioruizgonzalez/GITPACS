@@ -1,0 +1,9 @@
+create global temporary table GG_ADMIN.GGS_STICK
+(
+  property VARCHAR2(400) not null,
+  value    VARCHAR2(400)
+)
+on commit preserve rows;
+alter table GG_ADMIN.GGS_STICK
+  add primary key (PROPERTY);
+

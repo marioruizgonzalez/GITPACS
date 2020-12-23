@@ -1,0 +1,7 @@
+create table GG_ADMIN.PROJECT_SITE_PLAN_SYNC_REL
+(
+  task_id   NUMBER(15) not null,
+  site_code NUMBER(15) not null
+)
+nologging;
+

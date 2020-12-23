@@ -1,0 +1,257 @@
+create table GG_ADMIN.PA_PROJECTS_ALL
+(
+  project_id                    NUMBER(15) not null,
+  name                          VARCHAR2(30) not null,
+  segment1                      VARCHAR2(25) not null,
+  last_update_date              DATE not null,
+  last_updated_by               NUMBER(15) not null,
+  creation_date                 DATE not null,
+  created_by                    NUMBER(15) not null,
+  last_update_login             NUMBER(15) not null,
+  project_type                  VARCHAR2(20) not null,
+  carrying_out_organization_id  NUMBER(15) not null,
+  public_sector_flag            VARCHAR2(1) not null,
+  project_status_code           VARCHAR2(30) not null,
+  description                   VARCHAR2(250),
+  start_date                    DATE,
+  completion_date               DATE,
+  closed_date                   DATE,
+  distribution_rule             VARCHAR2(30),
+  labor_invoice_format_id       NUMBER(15),
+  non_labor_invoice_format_id   NUMBER(15),
+  retention_invoice_format_id   NUMBER(15),
+  retention_percentage          NUMBER(17,2),
+  billing_offset                NUMBER(15),
+  billing_cycle                 NUMBER(15),
+  labor_std_bill_rate_schdl     VARCHAR2(20),
+  labor_bill_rate_org_id        NUMBER(15),
+  labor_schedule_fixed_date     DATE,
+  labor_schedule_discount       NUMBER(7,4),
+  non_labor_std_bill_rate_schdl VARCHAR2(30),
+  non_labor_bill_rate_org_id    NUMBER(15),
+  non_labor_schedule_fixed_date DATE,
+  non_labor_schedule_discount   NUMBER(7,4),
+  limit_to_txn_controls_flag    VARCHAR2(1),
+  project_level_funding_flag    VARCHAR2(1),
+  invoice_comment               VARCHAR2(240),
+  unbilled_receivable_dr        NUMBER(22,5),
+  unearned_revenue_cr           NUMBER(22,5),
+  request_id                    NUMBER(15),
+  program_id                    NUMBER(15),
+  program_application_id        NUMBER(15),
+  program_update_date           DATE,
+  summary_flag                  VARCHAR2(1) not null,
+  enabled_flag                  VARCHAR2(1) not null,
+  segment2                      VARCHAR2(25),
+  segment3                      VARCHAR2(25),
+  segment4                      VARCHAR2(25),
+  segment5                      VARCHAR2(25),
+  segment6                      VARCHAR2(25),
+  segment7                      VARCHAR2(25),
+  segment8                      VARCHAR2(25),
+  segment9                      VARCHAR2(25),
+  segment10                     VARCHAR2(25),
+  attribute_category            VARCHAR2(30),
+  attribute1                    VARCHAR2(150),
+  attribute2                    VARCHAR2(150),
+  attribute3                    VARCHAR2(150),
+  attribute4                    VARCHAR2(150),
+  attribute5                    VARCHAR2(150),
+  attribute6                    VARCHAR2(150),
+  attribute7                    VARCHAR2(150),
+  attribute8                    VARCHAR2(150),
+  attribute9                    VARCHAR2(150),
+  attribute10                   VARCHAR2(150),
+  cost_ind_rate_sch_id          NUMBER(15),
+  rev_ind_rate_sch_id           NUMBER(15),
+  inv_ind_rate_sch_id           NUMBER(15),
+  cost_ind_sch_fixed_date       DATE,
+  rev_ind_sch_fixed_date        DATE,
+  inv_ind_sch_fixed_date        DATE,
+  labor_sch_type                VARCHAR2(1),
+  non_labor_sch_type            VARCHAR2(1),
+  ovr_cost_ind_rate_sch_id      NUMBER(15),
+  ovr_rev_ind_rate_sch_id       NUMBER(15),
+  ovr_inv_ind_rate_sch_id       NUMBER(15),
+  template_flag                 VARCHAR2(1),
+  verification_date             DATE,
+  created_from_project_id       NUMBER(15),
+  template_start_date_active    DATE,
+  template_end_date_active      DATE,
+  org_id                        NUMBER(15),
+  pm_product_code               VARCHAR2(30),
+  pm_project_reference          VARCHAR2(25),
+  actual_start_date             DATE,
+  actual_finish_date            DATE,
+  early_start_date              DATE,
+  early_finish_date             DATE,
+  late_start_date               DATE,
+  late_finish_date              DATE,
+  scheduled_start_date          DATE,
+  scheduled_finish_date         DATE,
+  billing_cycle_id              NUMBER(15),
+  adw_notify_flag               VARCHAR2(1) default 'Y',
+  wf_status_code                VARCHAR2(30),
+  output_tax_code               VARCHAR2(50),
+  retention_tax_code            VARCHAR2(50),
+  project_currency_code         VARCHAR2(15) not null,
+  allow_cross_charge_flag       VARCHAR2(1) not null,
+  project_rate_date             DATE,
+  project_rate_type             VARCHAR2(30),
+  cc_process_labor_flag         VARCHAR2(1) default 'N' not null,
+  labor_tp_schedule_id          NUMBER,
+  labor_tp_fixed_date           DATE,
+  cc_process_nl_flag            VARCHAR2(1) default 'N' not null,
+  nl_tp_schedule_id             NUMBER,
+  nl_tp_fixed_date              DATE,
+  cc_tax_task_id                NUMBER,
+  bill_job_group_id             NUMBER(15),
+  cost_job_group_id             NUMBER(15),
+  role_list_id                  NUMBER(15),
+  work_type_id                  NUMBER(15),
+  calendar_id                   NUMBER(15),
+  location_id                   NUMBER(15),
+  probability_member_id         NUMBER(15),
+  project_value                 NUMBER,
+  expected_approval_date        DATE,
+  record_version_number         NUMBER(15),
+  initial_team_template_id      NUMBER(15),
+  job_bill_rate_schedule_id     NUMBER,
+  emp_bill_rate_schedule_id     NUMBER,
+  competence_match_wt           NUMBER,
+  availability_match_wt         NUMBER,
+  job_level_match_wt            NUMBER,
+  enable_automated_search       VARCHAR2(1),
+  search_min_availability       NUMBER,
+  search_org_hier_id            NUMBER(15),
+  search_starting_org_id        NUMBER(15),
+  search_country_code           VARCHAR2(2),
+  min_cand_score_reqd_for_nom   NUMBER,
+  non_lab_std_bill_rt_sch_id    NUMBER(15),
+  invproc_currency_type         VARCHAR2(30),
+  revproc_currency_code         VARCHAR2(15),
+  project_bil_rate_date_code    VARCHAR2(30),
+  project_bil_rate_type         VARCHAR2(30),
+  project_bil_rate_date         DATE,
+  project_bil_exchange_rate     NUMBER,
+  projfunc_currency_code        VARCHAR2(15),
+  projfunc_bil_rate_date_code   VARCHAR2(30),
+  projfunc_bil_rate_type        VARCHAR2(30),
+  projfunc_bil_rate_date        DATE,
+  projfunc_bil_exchange_rate    NUMBER,
+  funding_rate_date_code        VARCHAR2(30),
+  funding_rate_type             VARCHAR2(30),
+  funding_rate_date             DATE,
+  funding_exchange_rate         NUMBER,
+  baseline_funding_flag         VARCHAR2(1),
+  projfunc_cost_rate_type       VARCHAR2(30),
+  projfunc_cost_rate_date       DATE,
+  inv_by_bill_trans_curr_flag   VARCHAR2(1),
+  multi_currency_billing_flag   VARCHAR2(1),
+  split_cost_from_workplan_flag VARCHAR2(1),
+  split_cost_from_bill_flag     VARCHAR2(1),
+  assign_precedes_task          VARCHAR2(1),
+  priority_code                 VARCHAR2(30),
+  retn_billing_inv_format_id    NUMBER(15),
+  retn_accounting_flag          VARCHAR2(1),
+  adv_action_set_id             NUMBER(15),
+  start_adv_action_set_flag     VARCHAR2(1),
+  revaluate_funding_flag        VARCHAR2(1),
+  include_gains_losses_flag     VARCHAR2(1),
+  target_start_date             DATE,
+  target_finish_date            DATE,
+  baseline_start_date           DATE,
+  baseline_finish_date          DATE,
+  scheduled_as_of_date          DATE,
+  baseline_as_of_date           DATE,
+  labor_disc_reason_code        VARCHAR2(30),
+  non_labor_disc_reason_code    VARCHAR2(30),
+  security_level                NUMBER,
+  actual_as_of_date             DATE,
+  scheduled_duration            NUMBER,
+  baseline_duration             NUMBER,
+  actual_duration               NUMBER,
+  long_name                     VARCHAR2(240),
+  btc_cost_base_rev_code        VARCHAR2(90),
+  asset_allocation_method       VARCHAR2(30),
+  capital_event_processing      VARCHAR2(30),
+  cint_rate_sch_id              NUMBER(15),
+  cint_eligible_flag            VARCHAR2(1),
+  cint_stop_date                DATE,
+  sys_program_flag              VARCHAR2(1),
+  structure_sharing_code        VARCHAR2(30),
+  enable_top_task_customer_flag VARCHAR2(1),
+  enable_top_task_inv_mth_flag  VARCHAR2(1),
+  revenue_accrual_method        VARCHAR2(30),
+  invoice_method                VARCHAR2(30),
+  projfunc_attr_for_ar_flag     VARCHAR2(1),
+  pji_source_flag               VARCHAR2(1),
+  allow_multi_program_rollup    VARCHAR2(1),
+  proj_req_res_format_id        NUMBER,
+  proj_asgmt_res_format_id      NUMBER,
+  funding_approval_status_code  VARCHAR2(30),
+  revtrans_currency_type        VARCHAR2(30),
+  date_eff_funds_consumption    VARCHAR2(1),
+  ar_rec_notify_flag            VARCHAR2(1) default 'N' not null,
+  auto_release_pwp_inv          VARCHAR2(1) default 'Y' not null,
+  bill_labor_accrual            VARCHAR2(1) default 'N',
+  adj_on_std_inv                VARCHAR2(2) default 'N',
+  cbs_version_id                NUMBER(15),
+  ic_labor_tp_schedule_id       NUMBER(22),
+  ic_labor_tp_fixed_date        DATE,
+  ic_nl_tp_schedule_id          NUMBER(22),
+  ic_nl_tp_fixed_date           DATE
+)
+;
+comment on column GG_ADMIN.PA_PROJECTS_ALL.output_tax_code
+  is 'Indicates whether tax rate defined for the project will be used for cust
+omer invoices';
+comment on column GG_ADMIN.PA_PROJECTS_ALL.retention_tax_code
+  is 'Indicates whether tax rate defined for the retention will be used for cu
+stomer invoices';
+comment on column GG_ADMIN.PA_PROJECTS_ALL.sys_program_flag
+  is 'Flag to determine whether the project is a program or not.';
+comment on column GG_ADMIN.PA_PROJECTS_ALL.enable_top_task_customer_flag
+  is 'Indicates if customers can be associated at the top task level';
+comment on column GG_ADMIN.PA_PROJECTS_ALL.enable_top_task_inv_mth_flag
+  is 'Indicates if invoice method can be associated at the top task level';
+comment on column GG_ADMIN.PA_PROJECTS_ALL.revenue_accrual_method
+  is 'Defines the revenue accrual method for the project';
+comment on column GG_ADMIN.PA_PROJECTS_ALL.invoice_method
+  is 'Defines the invoicing method for the project';
+comment on column GG_ADMIN.PA_PROJECTS_ALL.projfunc_attr_for_ar_flag
+  is 'Use Project Functional Currency Conversion Attributes for Receivables Functional Currency';
+comment on column GG_ADMIN.PA_PROJECTS_ALL.allow_multi_program_rollup
+  is 'Option to allow user to rollup to multiple programs';
+comment on column GG_ADMIN.PA_PROJECTS_ALL.proj_req_res_format_id
+  is 'Indicates the planning resource format for project requirement creation';
+comment on column GG_ADMIN.PA_PROJECTS_ALL.proj_asgmt_res_format_id
+  is 'Indicates the planning resource format for project assignment creation';
+comment on column GG_ADMIN.PA_PROJECTS_ALL.revtrans_currency_type
+  is 'Revenue Transaction Currency Type';
+comment on column GG_ADMIN.PA_PROJECTS_ALL.ar_rec_notify_flag
+  is 'Flag to decide if the PM should be notified when a receipt is applied.';
+comment on column GG_ADMIN.PA_PROJECTS_ALL.auto_release_pwp_inv
+  is 'Flag to decide if the Pay When Paid hold on linked supplier invoices must be automatically released by the concurrent program.';
+comment on column GG_ADMIN.PA_PROJECTS_ALL.bill_labor_accrual
+  is 'Bill labor accrual';
+comment on column GG_ADMIN.PA_PROJECTS_ALL.adj_on_std_inv
+  is 'Adjustments included on standard Invoice ';
+create index GG_ADMIN.PA_PROJECTS_F1 on GG_ADMIN.PA_PROJECTS_ALL (UPPER(SEGMENT1||' - '||NAME));
+create index GG_ADMIN.PA_PROJECTS_N1 on GG_ADMIN.PA_PROJECTS_ALL (LABOR_BILL_RATE_ORG_ID, LABOR_STD_BILL_RATE_SCHDL);
+create index GG_ADMIN.PA_PROJECTS_N10 on GG_ADMIN.PA_PROJECTS_ALL (NON_LAB_STD_BILL_RT_SCH_ID);
+create index GG_ADMIN.PA_PROJECTS_N11 on GG_ADMIN.PA_PROJECTS_ALL (PROJECT_TYPE);
+create index GG_ADMIN.PA_PROJECTS_N2 on GG_ADMIN.PA_PROJECTS_ALL (CARRYING_OUT_ORGANIZATION_ID, PROJECT_STATUS_CODE, COMPLETION_DATE, START_DATE);
+create index GG_ADMIN.PA_PROJECTS_N3 on GG_ADMIN.PA_PROJECTS_ALL (NON_LABOR_BILL_RATE_ORG_ID, NON_LABOR_STD_BILL_RATE_SCHDL);
+create index GG_ADMIN.PA_PROJECTS_N4 on GG_ADMIN.PA_PROJECTS_ALL (PROJECT_STATUS_CODE);
+create index GG_ADMIN.PA_PROJECTS_N5 on GG_ADMIN.PA_PROJECTS_ALL (ADW_NOTIFY_FLAG);
+create index GG_ADMIN.PA_PROJECTS_N6 on GG_ADMIN.PA_PROJECTS_ALL (TEMPLATE_FLAG);
+create index GG_ADMIN.PA_PROJECTS_N7 on GG_ADMIN.PA_PROJECTS_ALL (UPPER(NAME));
+create index GG_ADMIN.PA_PROJECTS_N8 on GG_ADMIN.PA_PROJECTS_ALL (JOB_BILL_RATE_SCHEDULE_ID);
+create index GG_ADMIN.PA_PROJECTS_N9 on GG_ADMIN.PA_PROJECTS_ALL (EMP_BILL_RATE_SCHEDULE_ID);
+create unique index GG_ADMIN.PA_PROJECTS_U1 on GG_ADMIN.PA_PROJECTS_ALL (PROJECT_ID, SEGMENT1);
+create unique index GG_ADMIN.PA_PROJECTS_U2 on GG_ADMIN.PA_PROJECTS_ALL (SEGMENT1);
+create unique index GG_ADMIN.PA_PROJECTS_U3 on GG_ADMIN.PA_PROJECTS_ALL (NAME);
+create unique index GG_ADMIN.PA_PROJECTS_U4 on GG_ADMIN.PA_PROJECTS_ALL (PM_PROJECT_REFERENCE, PM_PRODUCT_CODE);
+create unique index GG_ADMIN.PA_PROJECTS_U5 on GG_ADMIN.PA_PROJECTS_ALL (LONG_NAME);
+

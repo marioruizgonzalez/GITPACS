@@ -1,0 +1,14 @@
+create table GG_ADMIN.TR_BITACORA_TRIGGER
+(
+  id_tr_bitacora      NUMBER not null,
+  tr_nombre_trigger   VARCHAR2(100) not null,
+  tr_fecha_movimiento DATE default sysdate not null,
+  tr_codigo           VARCHAR2(30),
+  tr_error            VARCHAR2(30),
+  tr_mensaje          VARCHAR2(4000),
+  registro_erroneo    VARCHAR2(500)
+)
+;
+alter table GG_ADMIN.TR_BITACORA_TRIGGER
+  add primary key (ID_TR_BITACORA);
+

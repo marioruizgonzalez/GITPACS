@@ -1,0 +1,150 @@
+create table GG_ADMIN.CSI_ITEM_INSTANCES
+(
+  instance_id                NUMBER not null,
+  instance_number            VARCHAR2(30) not null,
+  external_reference         VARCHAR2(30),
+  inventory_item_id          NUMBER not null,
+  inventory_revision         VARCHAR2(3),
+  inv_master_organization_id NUMBER not null,
+  serial_number              VARCHAR2(30),
+  mfg_serial_number_flag     VARCHAR2(1),
+  lot_number                 VARCHAR2(80),
+  quantity                   NUMBER not null,
+  unit_of_measure            VARCHAR2(3) not null,
+  accounting_class_code      VARCHAR2(10),
+  instance_condition_id      NUMBER,
+  instance_status_id         NUMBER not null,
+  customer_view_flag         VARCHAR2(1) not null,
+  merchant_view_flag         VARCHAR2(1) not null,
+  sellable_flag              VARCHAR2(1),
+  system_id                  NUMBER,
+  instance_type_code         VARCHAR2(30),
+  active_start_date          DATE,
+  active_end_date            DATE,
+  location_type_code         VARCHAR2(30),
+  location_id                NUMBER,
+  inv_organization_id        NUMBER,
+  inv_subinventory_name      VARCHAR2(10),
+  inv_locator_id             NUMBER,
+  pa_project_id              NUMBER,
+  pa_project_task_id         NUMBER,
+  in_transit_order_line_id   NUMBER,
+  wip_job_id                 NUMBER,
+  po_order_line_id           NUMBER,
+  last_oe_order_line_id      NUMBER,
+  last_oe_rma_line_id        NUMBER,
+  last_po_po_line_id         NUMBER,
+  last_oe_po_number          VARCHAR2(50),
+  last_wip_job_id            NUMBER,
+  last_pa_project_id         NUMBER,
+  last_pa_task_id            NUMBER,
+  last_oe_agreement_id       NUMBER,
+  install_date               DATE,
+  manually_created_flag      VARCHAR2(1),
+  return_by_date             DATE,
+  actual_return_date         DATE,
+  creation_complete_flag     VARCHAR2(1),
+  completeness_flag          VARCHAR2(1),
+  context                    VARCHAR2(30),
+  attribute1                 VARCHAR2(240),
+  attribute2                 VARCHAR2(240),
+  attribute3                 VARCHAR2(240),
+  attribute4                 VARCHAR2(240),
+  attribute5                 VARCHAR2(240),
+  attribute6                 VARCHAR2(240),
+  attribute7                 VARCHAR2(240),
+  attribute8                 VARCHAR2(240),
+  attribute9                 VARCHAR2(240),
+  attribute10                VARCHAR2(240),
+  attribute11                VARCHAR2(240),
+  attribute12                VARCHAR2(240),
+  attribute13                VARCHAR2(240),
+  attribute14                VARCHAR2(240),
+  attribute15                VARCHAR2(240),
+  created_by                 NUMBER(15) not null,
+  creation_date              DATE not null,
+  last_updated_by            NUMBER(15) not null,
+  last_update_date           DATE not null,
+  last_update_login          NUMBER(15),
+  object_version_number      NUMBER not null,
+  security_group_id          NUMBER,
+  last_txn_line_detail_id    NUMBER,
+  install_location_type_code VARCHAR2(30),
+  install_location_id        NUMBER,
+  instance_usage_code        VARCHAR2(30),
+  owner_party_source_table   VARCHAR2(30),
+  owner_party_id             NUMBER,
+  owner_party_account_id     NUMBER,
+  last_vld_organization_id   NUMBER,
+  migrated_flag              VARCHAR2(1),
+  request_id                 NUMBER,
+  program_application_id     NUMBER,
+  program_id                 NUMBER,
+  program_update_date        DATE,
+  config_inst_hdr_id         NUMBER,
+  config_inst_rev_num        NUMBER,
+  config_inst_item_id        NUMBER,
+  config_valid_status        VARCHAR2(30),
+  instance_description       VARCHAR2(240),
+  last_purge_date            DATE,
+  capitalization_status      NUMBER,
+  attribute16                VARCHAR2(240),
+  attribute17                VARCHAR2(240),
+  attribute18                VARCHAR2(240),
+  attribute19                VARCHAR2(240),
+  attribute20                VARCHAR2(240),
+  attribute21                VARCHAR2(240),
+  attribute22                VARCHAR2(240),
+  attribute23                VARCHAR2(240),
+  attribute24                VARCHAR2(240),
+  attribute25                VARCHAR2(240),
+  attribute26                VARCHAR2(240),
+  attribute27                VARCHAR2(240),
+  attribute28                VARCHAR2(240),
+  attribute29                VARCHAR2(240),
+  attribute30                VARCHAR2(240),
+  network_asset_flag         VARCHAR2(1),
+  maintainable_flag          VARCHAR2(1),
+  pn_location_id             NUMBER,
+  asset_criticality_code     VARCHAR2(30),
+  category_id                NUMBER,
+  equipment_gen_object_id    NUMBER,
+  instantiation_flag         VARCHAR2(1),
+  linear_location_id         NUMBER,
+  operational_log_flag       VARCHAR2(1),
+  checkin_status             NUMBER,
+  supplier_warranty_exp_date DATE,
+  purchase_unit_price        NUMBER,
+  purchase_currency_code     VARCHAR2(15),
+  payables_unit_price        NUMBER,
+  payables_currency_code     VARCHAR2(15),
+  sales_unit_price           NUMBER,
+  sales_currency_code        VARCHAR2(15),
+  operational_status_code    VARCHAR2(30),
+  source_code                VARCHAR2(10)
+)
+;
+create index GG_ADMIN.CSI_ITEM_INSTANCES_F01 on GG_ADMIN.CSI_ITEM_INSTANCES (UPPER(SERIAL_NUMBER));
+create index GG_ADMIN.CSI_ITEM_INSTANCES_N01 on GG_ADMIN.CSI_ITEM_INSTANCES (INVENTORY_ITEM_ID, INV_MASTER_ORGANIZATION_ID);
+create index GG_ADMIN.CSI_ITEM_INSTANCES_N03 on GG_ADMIN.CSI_ITEM_INSTANCES (LOCATION_TYPE_CODE, INV_ORGANIZATION_ID, INV_SUBINVENTORY_NAME, INV_LOCATOR_ID);
+create index GG_ADMIN.CSI_ITEM_INSTANCES_N04 on GG_ADMIN.CSI_ITEM_INSTANCES (ACTIVE_END_DATE);
+create index GG_ADMIN.CSI_ITEM_INSTANCES_N05 on GG_ADMIN.CSI_ITEM_INSTANCES (SERIAL_NUMBER);
+create index GG_ADMIN.CSI_ITEM_INSTANCES_N06 on GG_ADMIN.CSI_ITEM_INSTANCES (LOCATION_TYPE_CODE, LOCATION_ID);
+create index GG_ADMIN.CSI_ITEM_INSTANCES_N07 on GG_ADMIN.CSI_ITEM_INSTANCES (SYSTEM_ID);
+create index GG_ADMIN.CSI_ITEM_INSTANCES_N08 on GG_ADMIN.CSI_ITEM_INSTANCES (LOCATION_TYPE_CODE, PA_PROJECT_ID);
+create index GG_ADMIN.CSI_ITEM_INSTANCES_N09 on GG_ADMIN.CSI_ITEM_INSTANCES (LOCATION_TYPE_CODE, WIP_JOB_ID);
+create index GG_ADMIN.CSI_ITEM_INSTANCES_N10 on GG_ADMIN.CSI_ITEM_INSTANCES (LOCATION_TYPE_CODE, IN_TRANSIT_ORDER_LINE_ID);
+create index GG_ADMIN.CSI_ITEM_INSTANCES_N11 on GG_ADMIN.CSI_ITEM_INSTANCES (LAST_OE_ORDER_LINE_ID);
+create index GG_ADMIN.CSI_ITEM_INSTANCES_N12 on GG_ADMIN.CSI_ITEM_INSTANCES (OWNER_PARTY_ACCOUNT_ID, INVENTORY_ITEM_ID);
+create index GG_ADMIN.CSI_ITEM_INSTANCES_N13 on GG_ADMIN.CSI_ITEM_INSTANCES (OWNER_PARTY_ID, OWNER_PARTY_SOURCE_TABLE, INSTANCE_NUMBER);
+create index GG_ADMIN.CSI_ITEM_INSTANCES_N14 on GG_ADMIN.CSI_ITEM_INSTANCES (LAST_OE_AGREEMENT_ID);
+create index GG_ADMIN.CSI_ITEM_INSTANCES_N15 on GG_ADMIN.CSI_ITEM_INSTANCES (INSTALL_LOCATION_TYPE_CODE, INSTALL_LOCATION_ID);
+create index GG_ADMIN.CSI_ITEM_INSTANCES_N16 on GG_ADMIN.CSI_ITEM_INSTANCES (CONFIG_INST_HDR_ID, CONFIG_INST_ITEM_ID);
+create index GG_ADMIN.CSI_ITEM_INSTANCES_N17 on GG_ADMIN.CSI_ITEM_INSTANCES (EXTERNAL_REFERENCE);
+create index GG_ADMIN.CSI_ITEM_INSTANCES_N18 on GG_ADMIN.CSI_ITEM_INSTANCES (INSTANCE_DESCRIPTION);
+create index GG_ADMIN.CSI_ITEM_INSTANCES_N19 on GG_ADMIN.CSI_ITEM_INSTANCES (LOT_NUMBER);
+create index GG_ADMIN.CSI_ITEM_INSTANCES_N20 on GG_ADMIN.CSI_ITEM_INSTANCES (LOCATION_TYPE_CODE, LAST_PO_PO_LINE_ID);
+create index GG_ADMIN.CSI_ITEM_INSTANCES_N21 on GG_ADMIN.CSI_ITEM_INSTANCES (LAST_VLD_ORGANIZATION_ID, INVENTORY_ITEM_ID, INSTANCE_ID, INSTANCE_NUMBER, SERIAL_NUMBER);
+create unique index GG_ADMIN.CSI_ITEM_INSTANCES_U01 on GG_ADMIN.CSI_ITEM_INSTANCES (INSTANCE_ID);
+create unique index GG_ADMIN.CSI_ITEM_INSTANCES_U02 on GG_ADMIN.CSI_ITEM_INSTANCES (INSTANCE_NUMBER);
+

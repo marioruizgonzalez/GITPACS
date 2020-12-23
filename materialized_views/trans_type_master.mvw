@@ -1,0 +1,5 @@
+CREATE MATERIALIZED VIEW GG_ADMIN.TRANS_TYPE_MASTER
+REFRESH FORCE ON DEMAND
+AS
+SELECT * from gg_admin.v_trans_type_master_sperto;
+

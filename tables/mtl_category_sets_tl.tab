@@ -1,0 +1,16 @@
+create table GG_ADMIN.MTL_CATEGORY_SETS_TL
+(
+  category_set_id   NUMBER not null,
+  language          VARCHAR2(4) not null,
+  source_lang       VARCHAR2(4) not null,
+  category_set_name VARCHAR2(30) not null,
+  description       VARCHAR2(240),
+  last_update_date  DATE not null,
+  last_updated_by   NUMBER not null,
+  creation_date     DATE not null,
+  created_by        NUMBER not null,
+  last_update_login NUMBER
+)
+;
+create unique index GG_ADMIN.MTL_CATEGORY_SETS_TL_U1 on GG_ADMIN.MTL_CATEGORY_SETS_TL (CATEGORY_SET_ID, LANGUAGE);
+

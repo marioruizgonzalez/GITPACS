@@ -1,0 +1,14 @@
+create table GG_ADMIN.SND_GENERIC_NOTIFICATION_QUERY
+(
+  id                NUMBER generated always as identity,
+  query             VARCHAR2(4000),
+  last_checked_date DATE,
+  status            VARCHAR2(1),
+  last_run_date     DATE,
+  notification_id   VARCHAR2(15)
+)
+nologging;
+alter table GG_ADMIN.SND_GENERIC_NOTIFICATION_QUERY
+  add primary key (ID);
+alter index GG_ADMIN.SYS_C0013734 nologging;
+

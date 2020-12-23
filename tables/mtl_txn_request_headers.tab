@@ -1,0 +1,56 @@
+create table GG_ADMIN.MTL_TXN_REQUEST_HEADERS
+(
+  header_id              NUMBER not null,
+  request_number         VARCHAR2(30) not null,
+  transaction_type_id    NUMBER,
+  move_order_type        NUMBER,
+  organization_id        NUMBER not null,
+  description            VARCHAR2(240),
+  date_required          DATE,
+  from_subinventory_code VARCHAR2(10),
+  to_subinventory_code   VARCHAR2(10),
+  to_account_id          NUMBER,
+  header_status          NUMBER,
+  status_date            DATE,
+  last_updated_by        NUMBER not null,
+  last_update_login      NUMBER,
+  last_update_date       DATE not null,
+  created_by             NUMBER,
+  creation_date          DATE,
+  request_id             NUMBER,
+  program_application_id NUMBER,
+  program_id             NUMBER,
+  program_update_date    DATE,
+  grouping_rule_id       NUMBER,
+  attribute1             VARCHAR2(150),
+  attribute2             VARCHAR2(150),
+  attribute3             VARCHAR2(150),
+  attribute4             VARCHAR2(150),
+  attribute5             VARCHAR2(150),
+  attribute6             VARCHAR2(150),
+  attribute7             VARCHAR2(150),
+  attribute8             VARCHAR2(150),
+  attribute9             VARCHAR2(150),
+  attribute10            VARCHAR2(150),
+  attribute11            VARCHAR2(150),
+  attribute12            VARCHAR2(150),
+  attribute13            VARCHAR2(150),
+  attribute14            VARCHAR2(150),
+  attribute15            VARCHAR2(150),
+  attribute_category     VARCHAR2(30),
+  ship_to_location_id    NUMBER,
+  freight_code           VARCHAR2(25),
+  shipment_method        VARCHAR2(30),
+  auto_receipt_flag      VARCHAR2(1),
+  reference_id           NUMBER,
+  reference_detail_id    NUMBER,
+  assignment_id          VARCHAR2(240)
+)
+;
+create index GG_ADMIN.MTL_TXN_REQUEST_HEADERS_N1 on GG_ADMIN.MTL_TXN_REQUEST_HEADERS (TRANSACTION_TYPE_ID);
+create index GG_ADMIN.MTL_TXN_REQUEST_HEADERS_N2 on GG_ADMIN.MTL_TXN_REQUEST_HEADERS (FROM_SUBINVENTORY_CODE, ORGANIZATION_ID);
+create index GG_ADMIN.MTL_TXN_REQUEST_HEADERS_N3 on GG_ADMIN.MTL_TXN_REQUEST_HEADERS (TO_SUBINVENTORY_CODE, ORGANIZATION_ID);
+create index GG_ADMIN.MTL_TXN_REQUEST_HEADERS_N4 on GG_ADMIN.MTL_TXN_REQUEST_HEADERS (MOVE_ORDER_TYPE);
+create unique index GG_ADMIN.MTL_TXN_REQUEST_HEADERS_U1 on GG_ADMIN.MTL_TXN_REQUEST_HEADERS (HEADER_ID);
+create unique index GG_ADMIN.MTL_TXN_REQUEST_HEADERS_U2 on GG_ADMIN.MTL_TXN_REQUEST_HEADERS (REQUEST_NUMBER, ORGANIZATION_ID);
+

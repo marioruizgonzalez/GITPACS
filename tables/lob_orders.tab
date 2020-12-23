@@ -1,0 +1,18 @@
+create table GG_ADMIN.LOB_ORDERS
+(
+  id           NUMBER not null,
+  name         VARCHAR2(35) not null,
+  description  VARCHAR2(100) not null,
+  business     VARCHAR2(10),
+  type         VARCHAR2(10),
+  superchannel VARCHAR2(20),
+  channel      VARCHAR2(15),
+  region       VARCHAR2(10),
+  client       VARCHAR2(15)
+)
+;
+alter table GG_ADMIN.LOB_ORDERS
+  add constraint LOB_ORDERS_PK primary key (ID);
+alter table GG_ADMIN.LOB_ORDERS
+  add constraint LOB_ORDERS_NAME_UK1 unique (NAME);
+

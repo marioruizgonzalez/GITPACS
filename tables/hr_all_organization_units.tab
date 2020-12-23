@@ -1,0 +1,73 @@
+create table GG_ADMIN.HR_ALL_ORGANIZATION_UNITS
+(
+  organization_id            NUMBER(15) not null,
+  business_group_id          NUMBER(15) not null,
+  cost_allocation_keyflex_id NUMBER(9),
+  location_id                NUMBER(15),
+  soft_coding_keyflex_id     NUMBER(15),
+  date_from                  DATE not null,
+  name                       VARCHAR2(240) not null,
+  date_to                    DATE,
+  internal_external_flag     VARCHAR2(30),
+  internal_address_line      VARCHAR2(80),
+  type                       VARCHAR2(30),
+  request_id                 NUMBER(15),
+  program_application_id     NUMBER(15),
+  program_id                 NUMBER(15),
+  program_update_date        DATE,
+  attribute_category         VARCHAR2(30),
+  attribute1                 VARCHAR2(150),
+  attribute2                 VARCHAR2(150),
+  attribute3                 VARCHAR2(150),
+  attribute4                 VARCHAR2(150),
+  attribute5                 VARCHAR2(150),
+  attribute6                 VARCHAR2(150),
+  attribute7                 VARCHAR2(150),
+  attribute8                 VARCHAR2(150),
+  attribute9                 VARCHAR2(150),
+  attribute10                VARCHAR2(150),
+  attribute11                VARCHAR2(150),
+  attribute12                VARCHAR2(150),
+  attribute13                VARCHAR2(150),
+  attribute14                VARCHAR2(150),
+  attribute15                VARCHAR2(150),
+  attribute16                VARCHAR2(150),
+  attribute17                VARCHAR2(150),
+  attribute18                VARCHAR2(150),
+  attribute19                VARCHAR2(150),
+  attribute20                VARCHAR2(150),
+  last_update_date           DATE,
+  last_updated_by            NUMBER(15),
+  last_update_login          NUMBER(15),
+  created_by                 NUMBER(15),
+  creation_date              DATE,
+  object_version_number      NUMBER(9),
+  party_id                   NUMBER(15),
+  comments                   LONG,
+  attribute21                VARCHAR2(150),
+  attribute22                VARCHAR2(150),
+  attribute23                VARCHAR2(150),
+  attribute24                VARCHAR2(150),
+  attribute25                VARCHAR2(150),
+  attribute26                VARCHAR2(150),
+  attribute27                VARCHAR2(150),
+  attribute28                VARCHAR2(150),
+  attribute29                VARCHAR2(150),
+  attribute30                VARCHAR2(150)
+)
+;
+create index GG_ADMIN.HR_ORGANIZATION_UNITS_FK1 on GG_ADMIN.HR_ALL_ORGANIZATION_UNITS (BUSINESS_GROUP_ID);
+create index GG_ADMIN.HR_ORGANIZATION_UNITS_FK2 on GG_ADMIN.HR_ALL_ORGANIZATION_UNITS (COST_ALLOCATION_KEYFLEX_ID);
+create index GG_ADMIN.HR_ORGANIZATION_UNITS_FK3 on GG_ADMIN.HR_ALL_ORGANIZATION_UNITS (LOCATION_ID);
+create index GG_ADMIN.HR_ORGANIZATION_UNITS_FK4 on GG_ADMIN.HR_ALL_ORGANIZATION_UNITS (SOFT_CODING_KEYFLEX_ID);
+alter table GG_ADMIN.HR_ALL_ORGANIZATION_UNITS
+  add constraint HR_ORGANIZATION_UNITS_PK primary key (ORGANIZATION_ID);
+alter table GG_ADMIN.HR_ALL_ORGANIZATION_UNITS
+  add constraint HR_ORGANIZATION_UNITS_UK2 unique (NAME, BUSINESS_GROUP_ID);
+alter table GG_ADMIN.HR_ALL_ORGANIZATION_UNITS
+  add constraint HR_OU_INTERNAL_EXTERNAL_FL_CHK
+  check (
+INTERNAL_EXTERNAL_FLAG IN ('INT', 'EXT')
+
+);
+

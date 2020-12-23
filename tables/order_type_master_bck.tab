@@ -1,0 +1,22 @@
+create table GG_ADMIN.ORDER_TYPE_MASTER_BCK
+(
+  row_id                 VARCHAR2(30) not null,
+  transaction_type_id    NUMBER not null,
+  transaction_type_code  VARCHAR2(30) not null,
+  order_category_code    VARCHAR2(30) not null,
+  start_date_active      DATE not null,
+  end_date_active        DATE not null,
+  creation_date          DATE not null,
+  currency_code          VARCHAR2(30) not null,
+  warehouse_id           NUMBER not null,
+  demand_class_code      VARCHAR2(30) not null,
+  shipment_priority_code VARCHAR2(30) not null,
+  shipping_method_code   VARCHAR2(30) not null,
+  ship_source_type_code  VARCHAR2(30) not null,
+  name                   VARCHAR2(30) not null,
+  description            VARCHAR2(2000) not null,
+  org_id                 NUMBER not null,
+  organization_name      VARCHAR2(240)
+)
+nologging;
+

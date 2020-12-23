@@ -1,0 +1,20 @@
+create table GG_ADMIN.PROJECT_PLAN_SYNC_DETAIL
+(
+  task_id                      NUMBER(15) not null,
+  project_id                   NUMBER(15) not null,
+  task_number                  NUMBER(15) not null,
+  add_date                     DATE not null,
+  mod_date                     DATE not null,
+  task_name                    NUMBER(15) not null,
+  top_task_id                  NUMBER(15) not null,
+  wbs_level                    NUMBER(15) not null,
+  parent_task_id               NUMBER(15) not null,
+  description                  VARCHAR2(250) not null,
+  carrying_out_organization_id NUMBER(15) not null,
+  start_date                   DATE not null,
+  actual_start_date            DATE not null,
+  completion_date              DATE not null,
+  actual_finish_date           DATE not null
+)
+nologging;
+

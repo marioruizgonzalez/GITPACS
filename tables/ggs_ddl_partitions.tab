@@ -1,0 +1,7 @@
+create table GG_ADMIN.GGS_DDL_PARTITIONS
+(
+  seqno        NUMBER not null,
+  partition_id NUMBER
+)
+;
+

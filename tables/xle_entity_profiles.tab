@@ -1,0 +1,187 @@
+create table GG_ADMIN.XLE_ENTITY_PROFILES
+(
+  legal_entity_id         NUMBER(15) not null,
+  party_id                NUMBER(15) not null,
+  legal_entity_identifier VARCHAR2(30),
+  name                    VARCHAR2(240) not null,
+  geography_id            NUMBER(15) not null,
+  transacting_entity_flag VARCHAR2(1),
+  effective_from          DATE,
+  effective_to            DATE,
+  le_information_context  VARCHAR2(30),
+  le_information1         VARCHAR2(150),
+  le_information2         VARCHAR2(150),
+  le_information3         VARCHAR2(150),
+  le_information4         VARCHAR2(150),
+  le_information5         VARCHAR2(150),
+  le_information6         VARCHAR2(150),
+  le_information7         VARCHAR2(150),
+  le_information8         VARCHAR2(150),
+  le_information9         VARCHAR2(150),
+  le_information10        VARCHAR2(150),
+  le_information11        VARCHAR2(150),
+  le_information12        VARCHAR2(150),
+  le_information13        VARCHAR2(150),
+  le_information14        VARCHAR2(150),
+  le_information15        VARCHAR2(150),
+  le_information16        VARCHAR2(150),
+  le_information17        VARCHAR2(150),
+  le_information18        VARCHAR2(150),
+  le_information19        VARCHAR2(150),
+  le_information20        VARCHAR2(150),
+  last_updated_by         NUMBER(15) not null,
+  creation_date           DATE not null,
+  last_update_login       NUMBER(15),
+  last_update_date        DATE not null,
+  created_by              NUMBER(15) not null,
+  object_version_number   NUMBER,
+  attribute_category      VARCHAR2(30),
+  attribute1              VARCHAR2(150),
+  attribute2              VARCHAR2(150),
+  attribute3              VARCHAR2(150),
+  attribute4              VARCHAR2(150),
+  attribute5              VARCHAR2(150),
+  attribute6              VARCHAR2(150),
+  attribute7              VARCHAR2(150),
+  attribute8              VARCHAR2(150),
+  attribute9              VARCHAR2(150),
+  attribute10             VARCHAR2(150),
+  attribute11             VARCHAR2(150),
+  attribute12             VARCHAR2(150),
+  attribute13             VARCHAR2(150),
+  attribute14             VARCHAR2(150),
+  attribute15             VARCHAR2(150),
+  attribute16             VARCHAR2(150),
+  attribute17             VARCHAR2(150),
+  attribute18             VARCHAR2(150),
+  attribute19             VARCHAR2(150),
+  attribute20             VARCHAR2(150),
+  activity_code           VARCHAR2(150),
+  sub_activity_code       VARCHAR2(150),
+  type_of_company         VARCHAR2(50)
+)
+;
+comment on table GG_ADMIN.XLE_ENTITY_PROFILES
+  is 'XLE_ENTITY_PROFILES stores the general information, which identifies a Party with the classification of Legal Entity';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.legal_entity_id
+  is 'Legal Entity Identifier';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.party_id
+  is 'Party Identifier';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.legal_entity_identifier
+  is 'Legal Entity Identifier';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.name
+  is 'Name';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.geography_id
+  is 'Geography Identifier';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.transacting_entity_flag
+  is 'Transacting Entity Flag';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.effective_from
+  is 'Effective From';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.effective_to
+  is 'Effective To';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.le_information_context
+  is 'Developer Flexfield Segment  Context';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.le_information1
+  is 'Developer Flexfield Segment 1';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.le_information2
+  is 'Developer Flexfield Segment 2';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.le_information3
+  is 'Developer Flexfield Segment 3';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.le_information4
+  is 'Developer Flexfield Segment 4';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.le_information5
+  is 'Developer Flexfield Segment 5';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.le_information6
+  is 'Developer Flexfield Segment 6';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.le_information7
+  is 'Developer Flexfield Segment 7';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.le_information8
+  is 'Developer Flexfield Segment 8';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.le_information9
+  is 'Developer Flexfield Segment 9';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.le_information10
+  is 'Developer Flexfield Segment 10';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.le_information11
+  is 'Developer Flexfield Segment 11';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.le_information12
+  is 'Developer Flexfield Segment 12';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.le_information13
+  is 'Developer Flexfield Segment 13';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.le_information14
+  is 'Developer Flexfield Segment 14';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.le_information15
+  is 'Developer Flexfield Segment 15';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.le_information16
+  is 'Developer Flexfield Segment 16';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.le_information17
+  is 'Developer Flexfield Segment 17';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.le_information18
+  is 'Developer Flexfield Segment 18';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.le_information19
+  is 'Developer Flexfield Segment 19';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.le_information20
+  is 'Developer Flexfield Segment 20';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.last_updated_by
+  is 'Standard Who Column';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.creation_date
+  is 'Standard Who Column';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.last_update_login
+  is 'Standard Who Column';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.last_update_date
+  is 'Standard Who Column';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.created_by
+  is 'Standard Who Column';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.object_version_number
+  is 'Object Version Number';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.attribute_category
+  is 'Descriptive Flexfield structure definition';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.attribute1
+  is 'Descriptive Flexfield segment 1';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.attribute2
+  is 'Descriptive Flexfield segment 2';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.attribute3
+  is 'Descriptive Flexfield segment 3';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.attribute4
+  is 'Descriptive Flexfield segment 4';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.attribute5
+  is 'Descriptive Flexfield segment 5';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.attribute6
+  is 'Descriptive Flexfield segment 6';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.attribute7
+  is 'Descriptive Flexfield segment 7';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.attribute8
+  is 'Descriptive Flexfield segment 8';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.attribute9
+  is 'Descriptive Flexfield segment 9';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.attribute10
+  is 'Descriptive Flexfield segment 10';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.attribute11
+  is 'Descriptive Flexfield segment 11';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.attribute12
+  is 'Descriptive Flexfield segment 12';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.attribute13
+  is 'Descriptive Flexfield segment 13';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.attribute14
+  is 'Descriptive Flexfield segment 14';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.attribute15
+  is 'Descriptive Flexfield segment 15';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.attribute16
+  is 'Descriptive Flexfield segment 16';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.attribute17
+  is 'Descriptive Flexfield segment 17';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.attribute18
+  is 'Descriptive Flexfield segment 18';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.attribute19
+  is 'Descriptive Flexfield segment 19';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.attribute20
+  is 'Descriptive Flexfield segment 20';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.activity_code
+  is 'Activity Code';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.sub_activity_code
+  is 'Sub-Activity Code';
+comment on column GG_ADMIN.XLE_ENTITY_PROFILES.type_of_company
+  is 'Type Of Company';
+create index GG_ADMIN.XLE_ENTITY_PROFILES_N1 on GG_ADMIN.XLE_ENTITY_PROFILES (NAME);
+create index GG_ADMIN.XLE_ENTITY_PROFILES_N2 on GG_ADMIN.XLE_ENTITY_PROFILES (PARTY_ID);
+create unique index GG_ADMIN.XLE_ENTITY_PROFILES_U1 on GG_ADMIN.XLE_ENTITY_PROFILES (LEGAL_ENTITY_ID);
+

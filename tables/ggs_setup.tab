@@ -1,0 +1,9 @@
+create table GG_ADMIN.GGS_SETUP
+(
+  property VARCHAR2(400),
+  value    VARCHAR2(4000)
+)
+;
+alter table GG_ADMIN.GGS_SETUP
+  add constraint GGS_SETUP_UKEY unique (PROPERTY);
+

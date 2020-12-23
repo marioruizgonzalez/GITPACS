@@ -1,0 +1,30 @@
+create table GG_ADMIN.ORG_MASTER_BKP
+(
+  org_id               NUMBER not null,
+  org_short_name       VARCHAR2(3),
+  org_name             VARCHAR2(240) not null,
+  location             VARCHAR2(60) not null,
+  location_address1    VARCHAR2(240) not null,
+  location_address2    VARCHAR2(240),
+  location_address3    VARCHAR2(240),
+  location_postal_code VARCHAR2(30),
+  location_city        VARCHAR2(60),
+  location_state       VARCHAR2(120),
+  location_country     VARCHAR2(120),
+  location_telephone1  VARCHAR2(60),
+  location_telephone2  VARCHAR2(60),
+  location_telephone3  VARCHAR2(60),
+  legal_entity         VARCHAR2(240) not null,
+  from_date            DATE not null,
+  to_date              DATE,
+  add_date             DATE,
+  mod_date             DATE,
+  type                 VARCHAR2(30),
+  classification_1     VARCHAR2(240),
+  classification_2     VARCHAR2(240),
+  classification_3     VARCHAR2(240),
+  classification_4     VARCHAR2(240),
+  classification_5     VARCHAR2(240)
+)
+nologging;
+

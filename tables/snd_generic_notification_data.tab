@@ -1,0 +1,16 @@
+create table GG_ADMIN.SND_GENERIC_NOTIFICATION_DATA
+(
+  id              NUMBER generated always as identity,
+  notification_id VARCHAR2(15),
+  add_date        DATE,
+  attribute_1     VARCHAR2(200),
+  attribute_2     VARCHAR2(200),
+  attribute_3     VARCHAR2(200),
+  attribute_4     VARCHAR2(200),
+  attribute_5     VARCHAR2(200)
+)
+nologging;
+alter table GG_ADMIN.SND_GENERIC_NOTIFICATION_DATA
+  add primary key (ID);
+alter index GG_ADMIN.SYS_C0013716 nologging;
+

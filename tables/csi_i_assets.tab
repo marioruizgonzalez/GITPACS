@@ -1,0 +1,7 @@
+create table GG_ADMIN.CSI_I_ASSETS
+(
+  instance_id NUMBER not null,
+  fa_asset_id NUMBER not null
+)
+;
+

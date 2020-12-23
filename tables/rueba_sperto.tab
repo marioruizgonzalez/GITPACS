@@ -1,0 +1,30 @@
+create table GG_ADMIN.RUEBA_SPERTO
+(
+  org_id               NUMBER(15) not null,
+  org_short_name       VARCHAR2(9),
+  org_name             VARCHAR2(720) not null,
+  location_            VARCHAR2(180) not null,
+  location_address1    VARCHAR2(720),
+  location_address2    VARCHAR2(720),
+  location_address3    VARCHAR2(720),
+  location_postal_code VARCHAR2(90),
+  location_city        VARCHAR2(360),
+  location_state       VARCHAR2(360),
+  location_country     VARCHAR2(180),
+  location_telephone1  VARCHAR2(180),
+  location_telephone2  VARCHAR2(180),
+  location_telephone3  VARCHAR2(180),
+  legal_entity         VARCHAR2(720),
+  from_date            DATE not null,
+  to_date_             DATE,
+  add_date             DATE,
+  mod_date             DATE,
+  type_                VARCHAR2(90),
+  clasification1       VARCHAR2(720),
+  clasification2       VARCHAR2(720),
+  clasification3       VARCHAR2(720),
+  clasification4       VARCHAR2(720),
+  clasification5       VARCHAR2(720)
+)
+;
+

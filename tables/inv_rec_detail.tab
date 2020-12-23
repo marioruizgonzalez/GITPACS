@@ -1,0 +1,13 @@
+create table GG_ADMIN.INV_REC_DETAIL
+(
+  trx_tmp_id_ln    NUMBER not null,
+  trx_tmp_id       NUMBER not null,
+  sku              VARCHAR2(25) not null,
+  serial_number    VARCHAR2(500),
+  creation_date    DATE not null,
+  last_update_date DATE not null
+)
+;
+alter table GG_ADMIN.INV_REC_DETAIL
+  add constraint PK_INV_REC_DET2 primary key (TRX_TMP_ID_LN);
+

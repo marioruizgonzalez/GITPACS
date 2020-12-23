@@ -1,0 +1,28 @@
+create table GG_ADMIN.GGS_DDL_OBJECTS
+(
+  seqno            NUMBER not null,
+  optime           CHAR(19) not null,
+  marker_table     VARCHAR2(400),
+  marker_seq       NUMBER,
+  start_scn        NUMBER,
+  optype           VARCHAR2(130),
+  objtype          VARCHAR2(130),
+  db_blocksize     NUMBER,
+  objowner         VARCHAR2(400),
+  objname          VARCHAR2(400),
+  objectid         NUMBER,
+  master_owner     VARCHAR2(400),
+  master_name      VARCHAR2(400),
+  data_objectid    NUMBER,
+  valid            VARCHAR2(30),
+  cluster_cols     NUMBER,
+  log_group_exists VARCHAR2(20),
+  subpartition     VARCHAR2(20),
+  partition        VARCHAR2(20),
+  primary_key      VARCHAR2(400),
+  total_cols       NUMBER,
+  cols_count       NUMBER,
+  ddl_statement    CLOB
+)
+;
+

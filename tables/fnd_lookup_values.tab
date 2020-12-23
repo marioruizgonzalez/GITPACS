@@ -1,0 +1,42 @@
+create table GG_ADMIN.FND_LOOKUP_VALUES
+(
+  lookup_type         VARCHAR2(30) not null,
+  language            VARCHAR2(30) not null,
+  lookup_code         VARCHAR2(30) not null,
+  meaning             VARCHAR2(80) not null,
+  description         VARCHAR2(240),
+  enabled_flag        VARCHAR2(1) not null,
+  start_date_active   DATE,
+  end_date_active     DATE,
+  created_by          NUMBER(15) not null,
+  creation_date       DATE not null,
+  last_updated_by     NUMBER(15) not null,
+  last_update_login   NUMBER(15),
+  last_update_date    DATE not null,
+  source_lang         VARCHAR2(4) not null,
+  security_group_id   NUMBER(15) default 0 not null,
+  view_application_id NUMBER(15) not null,
+  territory_code      VARCHAR2(2),
+  attribute_category  VARCHAR2(30),
+  attribute1          VARCHAR2(150),
+  attribute2          VARCHAR2(150),
+  attribute3          VARCHAR2(150),
+  attribute4          VARCHAR2(150),
+  attribute5          VARCHAR2(150),
+  attribute6          VARCHAR2(150),
+  attribute7          VARCHAR2(150),
+  attribute8          VARCHAR2(150),
+  attribute9          VARCHAR2(150),
+  attribute10         VARCHAR2(150),
+  attribute11         VARCHAR2(150),
+  attribute12         VARCHAR2(150),
+  attribute13         VARCHAR2(150),
+  attribute14         VARCHAR2(150),
+  attribute15         VARCHAR2(150),
+  tag                 VARCHAR2(150),
+  leaf_node           VARCHAR2(1)
+)
+;
+create unique index GG_ADMIN.FND_LOOKUP_VALUES_U1 on GG_ADMIN.FND_LOOKUP_VALUES (LOOKUP_TYPE, VIEW_APPLICATION_ID, LOOKUP_CODE, SECURITY_GROUP_ID, LANGUAGE);
+create unique index GG_ADMIN.FND_LOOKUP_VALUES_U2 on GG_ADMIN.FND_LOOKUP_VALUES (LOOKUP_TYPE, VIEW_APPLICATION_ID, MEANING, SECURITY_GROUP_ID, LANGUAGE);
+

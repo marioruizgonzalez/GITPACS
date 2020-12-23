@@ -1,0 +1,20 @@
+create table GG_ADMIN.INV_RECEIVING_DETAIL
+(
+  trx_tmp_id_ln     VARCHAR2(25) not null,
+  trx_tmp_id        NUMBER(15) not null,
+  error_code        VARCHAR2(100),
+  error_description VARCHAR2(1000),
+  date_processed    DATE not null,
+  last_update_date  DATE not null
+)
+;
+alter table GG_ADMIN.INV_RECEIVING_DETAIL
+  add constraint PK_INV_REC_DET primary key (TRX_TMP_ID_LN)
+  disable
+  novalidate;
+alter table GG_ADMIN.INV_RECEIVING_DETAIL
+  add constraint FK_INV_REC_DET_INRE foreign key (TRX_TMP_ID)
+  references GG_ADMIN.INVENTORY_RECEIVING (TRX_TMP_ID)
+  disable
+  novalidate;
+

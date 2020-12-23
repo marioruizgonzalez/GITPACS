@@ -1,0 +1,14 @@
+create table GG_ADMIN.OFA_INV_LS_RCV_TRANSACTIONS
+(
+  trx_tmp_id_ln    VARCHAR2(25) not null,
+  trx_tmp_id       NUMBER not null,
+  sku              VARCHAR2(25) not null,
+  serial_number    VARCHAR2(500),
+  creation_date    DATE not null,
+  last_update_date DATE not null
+)
+nologging;
+alter table GG_ADMIN.OFA_INV_LS_RCV_TRANSACTIONS
+  add constraint OFA_INV_LS_RCV_TRANSACTIONS_PK primary key (TRX_TMP_ID_LN);
+alter index GG_ADMIN.OFA_INV_LS_RCV_TRANSACTIONS_PK nologging;
+

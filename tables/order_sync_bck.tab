@@ -1,0 +1,23 @@
+create table GG_ADMIN.ORDER_SYNC_BCK
+(
+  header_id              NUMBER(15),
+  request_id             VARCHAR2(30),
+  transaction_type       VARCHAR2(30),
+  transaction_desc       VARCHAR2(240),
+  move_order_type        VARCHAR2(30),
+  move_order_desc        VARCHAR2(240),
+  organization_id        NUMBER(15),
+  description            VARCHAR2(240),
+  date_required          DATE,
+  from_subinventory_code VARCHAR2(10),
+  to_subinventory_code   VARCHAR2(10),
+  status                 VARCHAR2(80),
+  status_date            DATE,
+  mod_date               DATE,
+  add_date               DATE,
+  ship_to_location_id    NUMBER,
+  freight_code           VARCHAR2(25),
+  shipment_type          VARCHAR2(30)
+)
+nologging;
+

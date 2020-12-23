@@ -1,0 +1,71 @@
+create table GG_ADMIN.WMS_LICENSE_PLATE_NUMBERS
+(
+  lpn_id                  NUMBER not null,
+  license_plate_number    VARCHAR2(30) not null,
+  inventory_item_id       NUMBER,
+  last_update_date        DATE not null,
+  last_updated_by         NUMBER not null,
+  creation_date           DATE not null,
+  created_by              NUMBER not null,
+  last_update_login       NUMBER,
+  request_id              NUMBER,
+  program_application_id  NUMBER,
+  program_id              NUMBER,
+  program_update_date     DATE,
+  revision                VARCHAR2(3),
+  lot_number              VARCHAR2(80),
+  serial_number           VARCHAR2(30),
+  organization_id         NUMBER not null,
+  subinventory_code       VARCHAR2(10),
+  locator_id              NUMBER,
+  parent_lpn_id           NUMBER,
+  gross_weight_uom_code   VARCHAR2(3),
+  gross_weight            NUMBER,
+  content_volume_uom_code VARCHAR2(3),
+  content_volume          NUMBER,
+  tare_weight_uom_code    VARCHAR2(3),
+  tare_weight             NUMBER,
+  status_id               NUMBER,
+  lpn_state               NUMBER,
+  sealed_status           NUMBER,
+  attribute_category      VARCHAR2(30),
+  attribute1              VARCHAR2(150),
+  attribute2              VARCHAR2(150),
+  attribute3              VARCHAR2(150),
+  attribute4              VARCHAR2(150),
+  attribute5              VARCHAR2(150),
+  attribute6              VARCHAR2(150),
+  attribute7              VARCHAR2(150),
+  attribute8              VARCHAR2(150),
+  attribute9              VARCHAR2(150),
+  attribute10             VARCHAR2(150),
+  attribute11             VARCHAR2(150),
+  attribute12             VARCHAR2(150),
+  attribute13             VARCHAR2(150),
+  attribute14             VARCHAR2(150),
+  attribute15             VARCHAR2(150),
+  cost_group_id           NUMBER,
+  lpn_context             NUMBER not null,
+  lpn_reusability         NUMBER,
+  outermost_lpn_id        NUMBER,
+  homogeneous_container   NUMBER,
+  source_type_id          NUMBER,
+  source_header_id        NUMBER,
+  source_line_id          NUMBER,
+  source_line_detail_id   NUMBER,
+  source_name             VARCHAR2(30),
+  container_volume        NUMBER,
+  container_volume_uom    VARCHAR2(3),
+  catch_weight_flag       VARCHAR2(1)
+)
+;
+create index GG_ADMIN.WMS_LICENSE_PLATE_NUMBERS_N1 on GG_ADMIN.WMS_LICENSE_PLATE_NUMBERS (PARENT_LPN_ID);
+create index GG_ADMIN.WMS_LICENSE_PLATE_NUMBERS_N2 on GG_ADMIN.WMS_LICENSE_PLATE_NUMBERS (OUTERMOST_LPN_ID);
+create index GG_ADMIN.WMS_LICENSE_PLATE_NUMBERS_N3 on GG_ADMIN.WMS_LICENSE_PLATE_NUMBERS (ORGANIZATION_ID, SUBINVENTORY_CODE, LOCATOR_ID);
+create index GG_ADMIN.WMS_LICENSE_PLATE_NUMBERS_N4 on GG_ADMIN.WMS_LICENSE_PLATE_NUMBERS (SOURCE_NAME);
+create index GG_ADMIN.WMS_LICENSE_PLATE_NUMBERS_N5 on GG_ADMIN.WMS_LICENSE_PLATE_NUMBERS (SOURCE_HEADER_ID);
+create index GG_ADMIN.WMS_LICENSE_PLATE_NUMBERS_N6 on GG_ADMIN.WMS_LICENSE_PLATE_NUMBERS (LPN_CONTEXT, ORGANIZATION_ID);
+create index GG_ADMIN.WMS_LICENSE_PLATE_NUMBERS_N7 on GG_ADMIN.WMS_LICENSE_PLATE_NUMBERS (ORGANIZATION_ID, LPN_CONTEXT, LAST_UPDATE_DATE);
+create unique index GG_ADMIN.WMS_LICENSE_PLATE_NUMBERS_U1 on GG_ADMIN.WMS_LICENSE_PLATE_NUMBERS (LPN_ID);
+create unique index GG_ADMIN.WMS_LICENSE_PLATE_NUMBERS_U2 on GG_ADMIN.WMS_LICENSE_PLATE_NUMBERS (LICENSE_PLATE_NUMBER);
+

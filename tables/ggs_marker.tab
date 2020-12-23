@@ -1,0 +1,14 @@
+create table GG_ADMIN.GGS_MARKER
+(
+  seqno       NUMBER not null,
+  fragmentno  NUMBER not null,
+  optime      CHAR(19) not null,
+  type        VARCHAR2(100) not null,
+  subtype     VARCHAR2(100) not null,
+  marker_text VARCHAR2(4000) not null
+)
+;
+create index GG_ADMIN.GGS_MARKER_IND1 on GG_ADMIN.GGS_MARKER (SEQNO, FRAGMENTNO);
+alter table GG_ADMIN.GGS_MARKER
+  add primary key (OPTIME, SEQNO, FRAGMENTNO);
+

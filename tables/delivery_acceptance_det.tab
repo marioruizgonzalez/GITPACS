@@ -1,0 +1,18 @@
+create table GG_ADMIN.DELIVERY_ACCEPTANCE_DET
+(
+  id                     NUMBER(10) not null,
+  delivery_acceptance_id NUMBER(10) not null,
+  document_type          VARCHAR2(25),
+  customer_id            NUMBER(25),
+  maximage_type_id       NUMBER(25),
+  archive_id             NUMBER(25),
+  origin                 NUMBER(25),
+  usuario_maximage       VARCHAR2(25) not null,
+  ip_maximage            VARCHAR2(25) not null,
+  add_user               VARCHAR2(25) not null,
+  add_date               DATE not null,
+  mod_user               VARCHAR2(25) not null,
+  mod_date               DATE not null
+)
+;
+

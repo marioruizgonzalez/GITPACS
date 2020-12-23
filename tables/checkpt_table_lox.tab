@@ -1,0 +1,12 @@
+create table GG_ADMIN.CHECKPT_TABLE_LOX
+(
+  group_name         VARCHAR2(8) not null,
+  group_key          NUMBER(19) not null,
+  log_cmplt_csn      VARCHAR2(128) not null,
+  log_cmplt_xids_seq NUMBER(5) not null,
+  log_cmplt_xids     VARCHAR2(2000) not null
+)
+;
+alter table GG_ADMIN.CHECKPT_TABLE_LOX
+  add primary key (GROUP_NAME, GROUP_KEY, LOG_CMPLT_CSN, LOG_CMPLT_XIDS_SEQ);
+

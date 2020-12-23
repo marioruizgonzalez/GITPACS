@@ -1,0 +1,11 @@
+create table GG_ADMIN.GGS_DDL_HIST_ALT
+(
+  altobjectid NUMBER,
+  objectid    NUMBER,
+  optime      CHAR(19) not null
+)
+;
+create index GG_ADMIN.GGS_DDL_HIST_ALT_u1 on GG_ADMIN.GGS_DDL_HIST_ALT (OBJECTID, ALTOBJECTID);
+create index GG_ADMIN.GGS_DDL_HIST_ALT_u2 on GG_ADMIN.GGS_DDL_HIST_ALT (OPTIME);
+create index GG_ADMIN.GGS_DDL_HIST_ALT_u3 on GG_ADMIN.GGS_DDL_HIST_ALT (ALTOBJECTID, OBJECTID);
+

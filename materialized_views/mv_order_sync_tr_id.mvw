@@ -1,0 +1,5 @@
+create materialized view GG_ADMIN.MV_ORDER_SYNC_TR_ID
+refresh force on demand
+as
+select * from v_ORDER_SYNC_TR_ID;
+

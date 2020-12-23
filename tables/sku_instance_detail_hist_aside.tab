@@ -1,0 +1,19 @@
+create table GG_ADMIN.SKU_INSTANCE_DETAIL_HIST_ASIDE
+(
+  transacton_id           NUMBER not null,
+  serial_number           VARCHAR2(90),
+  lot_number              VARCHAR2(240),
+  inventory_item_id       NUMBER not null,
+  transaction_date        DATE not null,
+  transaction_source_name VARCHAR2(240),
+  receipt_issue_type      NUMBER,
+  ship_id                 NUMBER,
+  origination_date        DATE,
+  status_id               NUMBER,
+  product_code            VARCHAR2(15),
+  producto_transaction_id NUMBER,
+  attribute3              VARCHAR2(450),
+  attribute4              VARCHAR2(450)
+)
+;
+

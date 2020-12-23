@@ -1,0 +1,13 @@
+create table GG_ADMIN.TOKEN_USER
+(
+  username              VARCHAR2(50),
+  password              VARCHAR2(100),
+  firstname             VARCHAR2(50),
+  lastname              VARCHAR2(50),
+  email                 VARCHAR2(50),
+  enabled               VARCHAR2(6),
+  lastpasswordresetdate DATE default SYSDATE,
+  id                    NUMBER(10)
+)
+nologging;
+

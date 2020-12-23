@@ -1,0 +1,14 @@
+create global temporary table GG_ADMIN.GGS_TEMP_UK
+(
+  seqno    NUMBER not null,
+  keyname  VARCHAR2(400) not null,
+  colname  VARCHAR2(400) not null,
+  nullable NUMBER,
+  virtual  NUMBER,
+  udt      NUMBER,
+  issys    NUMBER
+)
+on commit preserve rows;
+alter table GG_ADMIN.GGS_TEMP_UK
+  add primary key (SEQNO, KEYNAME, COLNAME);
+

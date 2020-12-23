@@ -1,0 +1,3 @@
+create or replace synonym GG_ADMIN.SND_HS_DELIVERY_HISTORY
+  for IPACS.SND_HS_DELIVERY_HISTORY;
+

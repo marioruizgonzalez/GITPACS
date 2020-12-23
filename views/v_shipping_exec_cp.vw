@@ -1,0 +1,79 @@
+CREATE OR REPLACE FORCE VIEW GG_ADMIN.V_SHIPPING_EXEC_CP AS
+SELECT 
+        SIT.INVENTORY_ITEM_ID ERP_INVENTORY_ID, 
+        SIT.ADD_DATE, 
+        SIT.MOD_DATE, 
+        SIT.ORG_ID,
+        ORMAOR.ORG_SHORT_NAME,
+        SIT.SERIAL_NUMBER INVENTORY_SERIAL_NO,
+        SIT.UOM,
+        ABS(SIT.PRIMARY_QUANTITY) QUANTITY,
+        SIT.SUBINVENTORY_SHORT_CODE SUBINVENTORY,
+        (CASE 
+            WHEN SIT.TRANSACTION_SOURCE_TYPE_ID=13 THEN 'Inventario'
+            ELSE null
+        END) SOURCE_TYPE,
+        SIT.ERP_INVENTORY_ID TRANSACTION_SOURCE_ID,
+        SIT.TRANSACTION_TIME,
+        (CASE NVL(SIT2.TRANSACTION_ACTION,SIT.TRANSACTION_ACTION)
+            WHEN 12 THEN 'Intransit Receipt'
+            WHEN 21 THEN 'Intransit Shipment'
+            WHEN 3 THEN 'Trnsfrncia Org Directa'
+            ELSE null
+        END) TRANSACTION_ACTION,
+        null LPN_NO,
+        SIT.SHIPMENT_NO,
+        ORMADES.LOCATION_ADDRESS1 ADDRESS1,
+        ORMADES.LOCATION_ADDRESS2 ADDRESS2,
+        ORMADES.LOCATION_ADDRESS3 ADDRESS3,
+        null ADDRESS4,
+        null SHIP_TO, --- ERROR CON SIT.ORG_DES 
+        SIT.ORG_DES DELIVER_TO,
+        SIT.TRANSACTION_SOURCE ORDER_NO,
+        null SHIPPING_METHOD,
+        null DELIVERY, 
+        null REQUESTED_QTY,--ABS(SIT.PRIMARY_QUANTITY) REQUESTED_QUANTITY
+        null SHIPPED_QTY, --ABS(SIT.TRANSACTION_QUANTITY) SHIPPED_QUANTITY
+        0  BACKORDER_QTY,
+        ORMAOR.ORG_SHORT_NAME SHIP_FROM,
+        NVL(SIT.FREIGHT_CODE, 'Sin Transporte') CARRIER,
+        null CONSIGNEE,
+        null OPERATOR,
+        null SEAL_CODE,
+        ORMAOR.ORG_SHORT_NAME VEHICLE_ORG_CODE,
+        null VEHICLE_NUMBER,
+        SKUMA.SKU VEHICLE_ITEM_NAME,
+        null BILL_TO_ADDRESS,
+        null CUSTOMER_PO_NUMBER,
+        (CASE NVL(SIT2.TRANSACTION_TYPE_ID,SIT.TRANSACTION_TYPE_ID)
+            WHEN 12 THEN 'Recibido'
+            ELSE 'Enviado'
+        END)STATUS_SHIPPING_ORDER,
+        null CUSTODY,
+        null TRIP_NO,
+        null TRX_NUMBER,
+        ORMADES.LOCATION_POSTAL_CODE ZIP_CODE,
+        null HOLD_FLAG,
+        'C. Propio' SOURCE_HEADER_TYPE_NAME
+    FROM (SELECT mmt.*,sid.serial_number FROM gg_admin.TEST_MTL_MAT_TX MMT
+            LEFT JOIN gg_admin.SKU_INSTANCE_DETAIL sid
+            ON mmt.erp_inventory_id=sid.transacton_id
+        ) SIT
+        LEFT JOIN (SELECT mmt.*,sid.serial_number FROM gg_admin.TEST_MTL_MAT_TX MMT
+            LEFT JOIN gg_admin.SKU_INSTANCE_DETAIL sid
+            ON mmt.erp_inventory_id=sid.transacton_id
+        ) SIT2
+            ON NVL(SIT.SERIAL_NUMBER,1) = NVL(SIT2.SERIAL_NUMBER,1)
+            AND SIT.SHIPMENT_NO=SIT2.SHIPMENT_NO
+            AND SIT.INVENTORY_ITEM_ID=SIT2.INVENTORY_ITEM_ID
+            AND SIT2.TRANSACTION_TYPE_ID=12
+            AND SIT.transaction_type_id IN (21,3)
+        LEFT JOIN ORG_MASTER ORMADES
+            ON ORMADES.ORG_ID=SIT.ORG_DES
+        LEFT JOIN ORG_MASTER ORMAOR
+            ON ORMAOR.ORG_ID=SIT.ORG_ID
+            AND SIT.ORG_ID NOT IN (389) -- ORGANIZACIONES DE NETWORK
+        LEFT JOIN SKU_MASTER SKUMA
+            ON SKUMA.ERP_INVENTORY_ID=SIT.INVENTORY_ITEM_ID
+;
+

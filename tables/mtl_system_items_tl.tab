@@ -1,0 +1,18 @@
+create table GG_ADMIN.MTL_SYSTEM_ITEMS_TL
+(
+  inventory_item_id NUMBER not null,
+  organization_id   NUMBER not null,
+  language          VARCHAR2(4) not null,
+  source_lang       VARCHAR2(4) not null,
+  description       VARCHAR2(240),
+  last_update_date  DATE not null,
+  last_updated_by   NUMBER not null,
+  creation_date     DATE not null,
+  created_by        NUMBER not null,
+  last_update_login NUMBER,
+  long_description  VARCHAR2(4000)
+)
+;
+create index GG_ADMIN.MTL_SYSTEM_ITEMS_TL_N1 on GG_ADMIN.MTL_SYSTEM_ITEMS_TL (ORGANIZATION_ID, LANGUAGE, DESCRIPTION);
+create unique index GG_ADMIN.MTL_SYSTEM_ITEMS_TL_U1 on GG_ADMIN.MTL_SYSTEM_ITEMS_TL (INVENTORY_ITEM_ID, ORGANIZATION_ID, LANGUAGE);
+

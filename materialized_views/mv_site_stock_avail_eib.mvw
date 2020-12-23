@@ -1,0 +1,33 @@
+CREATE MATERIALIZED VIEW GG_ADMIN.MV_SITE_STOCK_AVAIL_EIB
+REFRESH FORCE ON DEMAND
+AS
+SELECT
+    CIIN.instance_id INSTANCE_ID,
+    CIIN.inventory_item_id INVENTORY_ID,
+    CIIN.inv_master_organization_id MASTER_ORGANIZATION_ID,
+    CIIN.serial_number SERIAL_NUMBER,
+    CIIN.lot_number FA_NUMBER,
+    CIIN.quantity QUANTITY,
+    CIIN.unit_of_measure UOM,
+    CIIN.location_type_code LOCATION_TYPE_CODE,
+    CIIN.location_id LOCATION_ID,
+    CIIN.inv_organization_id ORGANIZATION_ID,
+    CIIN.inv_subinventory_name SUBINVENTORY_NAME,
+    CIIN.INV_LOCATOR_ID LOCATOR_ID,
+    CIIN.pa_project_id PROJECT_ID,
+    CIIN.pa_project_task_id PROJECT_TASK_ID,
+    CIIN.install_date INSTALL_DATE,
+    CIIN.return_by_date RETURN_BY_DATE,
+    CIIN.actual_return_date ACTUAL_RETURN_DATE,
+    CIIN.creation_date ADD_DATE,
+    CIIN.last_update_date MOD_DATE,
+    CIIN.install_location_id INSTALL_LOCATION_ID,
+    0 INV_MATERIAL_TRANSACTION_ID,
+    0 TRANSACTION_ID,
+  poh.segment1 oc
+FROM CSI.csi_item_instances@OFNX_SPERTO CIIN
+  LEFT JOIN PO.po_lines_all@OFNX_SPERTO pol
+    ON pol.po_line_id = ciin.last_po_po_line_id
+  LEFT JOIN PO.PO_HEADERS_ALL@OFNX_SPERTO poh
+    ON poh.po_header_id = pol.po_header_id;
+

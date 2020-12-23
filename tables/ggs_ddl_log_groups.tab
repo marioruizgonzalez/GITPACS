@@ -1,0 +1,7 @@
+create table GG_ADMIN.GGS_DDL_LOG_GROUPS
+(
+  seqno       NUMBER not null,
+  column_name VARCHAR2(400)
+)
+;
+

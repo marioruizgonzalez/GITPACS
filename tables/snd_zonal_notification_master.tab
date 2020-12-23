@@ -1,0 +1,17 @@
+create table GG_ADMIN.SND_ZONAL_NOTIFICATION_MASTER
+(
+  id            NUMBER generated always as identity,
+  from_zip_code VARCHAR2(25) not null,
+  to_zip_code   VARCHAR2(25) not null,
+  time_in_hours NUMBER not null,
+  recipients    VARCHAR2(1000) not null,
+  message       VARCHAR2(4000) not null,
+  add_by        VARCHAR2(50),
+  add_date      DATE,
+  mod_by        VARCHAR2(50),
+  mod_date      DATE
+)
+;
+alter table GG_ADMIN.SND_ZONAL_NOTIFICATION_MASTER
+  add primary key (ID);
+

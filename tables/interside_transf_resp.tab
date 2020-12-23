@@ -1,0 +1,11 @@
+create table GG_ADMIN.INTERSIDE_TRANSF_RESP
+(
+  transaction_id    NUMBER not null,
+  process_status    NUMBER not null,
+  error_code        VARCHAR2(25),
+  error_description VARCHAR2(250),
+  date_processed    DATE not null,
+  last_update_date  DATE not null
+)
+;
+

@@ -1,0 +1,18 @@
+create table GG_ADMIN.DELIVERY_ACCEPT_DETAIL
+(
+  id                     NUMBER(10) not null,
+  delivery_acceptance_id NUMBER(10) not null,
+  document_type          VARCHAR2(25) not null,
+  customer_id            NUMBER(25),
+  maximage_type_id       NUMBER(25) not null,
+  archive_id             VARCHAR2(30) not null,
+  origin                 NUMBER(25) not null,
+  add_user               VARCHAR2(25) not null,
+  mod_user               VARCHAR2(25) not null,
+  add_date               DATE not null,
+  mod_date               DATE,
+  usuario_maximage       VARCHAR2(25),
+  ip_maximage            VARCHAR2(25)
+)
+nologging;
+

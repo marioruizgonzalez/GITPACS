@@ -1,0 +1,8 @@
+create table GG_ADMIN.TMP_WRITING
+(
+  id_number  NUMBER(7),
+  desc_table VARCHAR2(50),
+  id_owner   VARCHAR2(30)
+)
+;
+

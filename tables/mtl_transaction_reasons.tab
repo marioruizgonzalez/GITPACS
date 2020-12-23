@@ -1,0 +1,39 @@
+create table GG_ADMIN.MTL_TRANSACTION_REASONS
+(
+  reason_id                NUMBER not null,
+  last_update_date         DATE not null,
+  last_updated_by          NUMBER not null,
+  creation_date            DATE not null,
+  created_by               NUMBER not null,
+  last_update_login        NUMBER,
+  reason_name              VARCHAR2(30) not null,
+  description              VARCHAR2(240),
+  disable_date             DATE,
+  attribute1               VARCHAR2(150),
+  attribute2               VARCHAR2(150),
+  attribute3               VARCHAR2(150),
+  attribute4               VARCHAR2(150),
+  attribute5               VARCHAR2(150),
+  attribute6               VARCHAR2(150),
+  attribute7               VARCHAR2(150),
+  attribute8               VARCHAR2(150),
+  attribute9               VARCHAR2(150),
+  attribute10              VARCHAR2(150),
+  attribute11              VARCHAR2(150),
+  attribute12              VARCHAR2(150),
+  attribute13              VARCHAR2(150),
+  attribute14              VARCHAR2(150),
+  attribute15              VARCHAR2(150),
+  attribute_category       VARCHAR2(30),
+  workflow_name            VARCHAR2(80),
+  workflow_display_name    VARCHAR2(80),
+  workflow_process         VARCHAR2(80),
+  workflow_display_process VARCHAR2(80),
+  reason_type              NUMBER,
+  reason_type_display      VARCHAR2(80),
+  reason_context_code      VARCHAR2(2)
+)
+;
+create index GG_ADMIN.MTL_TRANSACTION_REASONS_N1 on GG_ADMIN.MTL_TRANSACTION_REASONS (REASON_TYPE, REASON_NAME);
+create unique index GG_ADMIN.MTL_TRANSACTION_REASONS_U1 on GG_ADMIN.MTL_TRANSACTION_REASONS (REASON_ID);
+

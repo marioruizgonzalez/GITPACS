@@ -1,0 +1,5 @@
+CREATE MATERIALIZED VIEW GG_ADMIN.SKU_INSTANCE2
+REFRESH COMPLETE ON DEMAND
+AS
+SELECT * FROM gg_admin.MV_sku_instance@of_iplnk where mod_date > '29/OCT/20';
+

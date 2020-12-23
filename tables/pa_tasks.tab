@@ -1,0 +1,127 @@
+create table GG_ADMIN.PA_TASKS
+(
+  task_id                       NUMBER(15) not null,
+  project_id                    NUMBER(15) not null,
+  task_number                   VARCHAR2(25) not null,
+  creation_date                 DATE not null,
+  created_by                    NUMBER(15) not null,
+  last_update_date              DATE not null,
+  last_updated_by               NUMBER(15) not null,
+  last_update_login             NUMBER(15) not null,
+  task_name                     VARCHAR2(20) not null,
+  top_task_id                   NUMBER(15) not null,
+  wbs_level                     NUMBER(3) not null,
+  ready_to_bill_flag            VARCHAR2(1) not null,
+  ready_to_distribute_flag      VARCHAR2(1) not null,
+  parent_task_id                NUMBER(15),
+  description                   VARCHAR2(250),
+  carrying_out_organization_id  NUMBER(15) not null,
+  service_type_code             VARCHAR2(30),
+  task_manager_person_id        NUMBER(9),
+  chargeable_flag               VARCHAR2(1),
+  billable_flag                 VARCHAR2(1),
+  limit_to_txn_controls_flag    VARCHAR2(1),
+  start_date                    DATE,
+  completion_date               DATE,
+  address_id                    NUMBER(15),
+  labor_bill_rate_org_id        NUMBER(15),
+  labor_std_bill_rate_schdl     VARCHAR2(20),
+  labor_schedule_fixed_date     DATE,
+  labor_schedule_discount       NUMBER(7,4),
+  non_labor_bill_rate_org_id    NUMBER(15),
+  non_labor_std_bill_rate_schdl VARCHAR2(30),
+  non_labor_schedule_fixed_date DATE,
+  non_labor_schedule_discount   NUMBER(7,4),
+  labor_cost_multiplier_name    VARCHAR2(20),
+  request_id                    NUMBER(15),
+  program_application_id        NUMBER(15),
+  program_id                    NUMBER(15),
+  program_update_date           DATE,
+  attribute_category            VARCHAR2(30),
+  attribute1                    VARCHAR2(150),
+  attribute2                    VARCHAR2(150),
+  attribute3                    VARCHAR2(150),
+  attribute4                    VARCHAR2(150),
+  attribute5                    VARCHAR2(150),
+  attribute6                    VARCHAR2(150),
+  attribute7                    VARCHAR2(150),
+  attribute8                    VARCHAR2(150),
+  attribute9                    VARCHAR2(150),
+  attribute10                   VARCHAR2(150),
+  cost_ind_rate_sch_id          NUMBER(15),
+  rev_ind_rate_sch_id           NUMBER(15),
+  inv_ind_rate_sch_id           NUMBER(15),
+  cost_ind_sch_fixed_date       DATE,
+  rev_ind_sch_fixed_date        DATE,
+  inv_ind_sch_fixed_date        DATE,
+  labor_sch_type                VARCHAR2(1),
+  non_labor_sch_type            VARCHAR2(1),
+  ovr_cost_ind_rate_sch_id      NUMBER(15),
+  ovr_inv_ind_rate_sch_id       NUMBER(15),
+  ovr_rev_ind_rate_sch_id       NUMBER(15),
+  pm_product_code               VARCHAR2(30),
+  pm_task_reference             VARCHAR2(25),
+  actual_start_date             DATE,
+  actual_finish_date            DATE,
+  early_start_date              DATE,
+  early_finish_date             DATE,
+  late_start_date               DATE,
+  late_finish_date              DATE,
+  scheduled_start_date          DATE,
+  scheduled_finish_date         DATE,
+  adw_notify_flag               VARCHAR2(1) default 'Y',
+  allow_cross_charge_flag       VARCHAR2(1) not null,
+  project_rate_date             DATE,
+  project_rate_type             VARCHAR2(30),
+  cc_process_labor_flag         VARCHAR2(1) default 'N' not null,
+  labor_tp_schedule_id          NUMBER,
+  labor_tp_fixed_date           DATE,
+  cc_process_nl_flag            VARCHAR2(1) default 'N' not null,
+  nl_tp_schedule_id             NUMBER,
+  nl_tp_fixed_date              DATE,
+  receive_project_invoice_flag  VARCHAR2(1),
+  work_type_id                  NUMBER(15),
+  record_version_number         NUMBER(15),
+  job_bill_rate_schedule_id     NUMBER,
+  emp_bill_rate_schedule_id     NUMBER,
+  taskfunc_cost_rate_type       VARCHAR2(30),
+  taskfunc_cost_rate_date       DATE,
+  non_lab_std_bill_rt_sch_id    NUMBER(15),
+  labor_disc_reason_code        VARCHAR2(30),
+  non_labor_disc_reason_code    VARCHAR2(30),
+  long_task_name                VARCHAR2(240),
+  retirement_cost_flag          VARCHAR2(1),
+  cint_eligible_flag            VARCHAR2(1),
+  cint_stop_date                DATE,
+  revenue_accrual_method        VARCHAR2(30),
+  invoice_method                VARCHAR2(30),
+  customer_id                   NUMBER,
+  gen_etc_source_code           VARCHAR2(30),
+  bill_sche_ovrd_flag           VARCHAR2(1),
+  adj_on_std_inv                VARCHAR2(2),
+  ic_labor_tp_schedule_id       NUMBER(22),
+  ic_labor_tp_fixed_date        DATE,
+  ic_nl_tp_schedule_id          NUMBER(22),
+  ic_nl_tp_fixed_date           DATE
+)
+;
+create index GG_ADMIN.PA_TASKS_N1 on GG_ADMIN.PA_TASKS (LABOR_BILL_RATE_ORG_ID, LABOR_STD_BILL_RATE_SCHDL);
+create index GG_ADMIN.PA_TASKS_N10 on GG_ADMIN.PA_TASKS (ADDRESS_ID);
+create index GG_ADMIN.PA_TASKS_N11 on GG_ADMIN.PA_TASKS (JOB_BILL_RATE_SCHEDULE_ID);
+create index GG_ADMIN.PA_TASKS_N12 on GG_ADMIN.PA_TASKS (EMP_BILL_RATE_SCHEDULE_ID);
+create index GG_ADMIN.PA_TASKS_N13 on GG_ADMIN.PA_TASKS (NON_LAB_STD_BILL_RT_SCH_ID);
+create index GG_ADMIN.PA_TASKS_N14 on GG_ADMIN.PA_TASKS (PARENT_TASK_ID, PROJECT_ID);
+create index GG_ADMIN.PA_TASKS_N15 on GG_ADMIN.PA_TASKS (PROJECT_ID, READY_TO_BILL_FLAG, TASK_ID);
+create index GG_ADMIN.PA_TASKS_N16 on GG_ADMIN.PA_TASKS (PROJECT_ID, READY_TO_BILL_FLAG, TASK_ID, TOP_TASK_ID, INVOICE_METHOD);
+create index GG_ADMIN.PA_TASKS_N17 on GG_ADMIN.PA_TASKS (PARENT_TASK_ID, TASK_ID);
+create index GG_ADMIN.PA_TASKS_N2 on GG_ADMIN.PA_TASKS (CARRYING_OUT_ORGANIZATION_ID);
+create index GG_ADMIN.PA_TASKS_N3 on GG_ADMIN.PA_TASKS (SERVICE_TYPE_CODE);
+create index GG_ADMIN.PA_TASKS_N4 on GG_ADMIN.PA_TASKS (PARENT_TASK_ID, TASK_NUMBER);
+create index GG_ADMIN.PA_TASKS_N5 on GG_ADMIN.PA_TASKS (NON_LABOR_BILL_RATE_ORG_ID, NON_LABOR_STD_BILL_RATE_SCHDL);
+create index GG_ADMIN.PA_TASKS_N6 on GG_ADMIN.PA_TASKS (TASK_MANAGER_PERSON_ID);
+create index GG_ADMIN.PA_TASKS_N7 on GG_ADMIN.PA_TASKS (TOP_TASK_ID);
+create index GG_ADMIN.PA_TASKS_N8 on GG_ADMIN.PA_TASKS (PROJECT_ID, PM_TASK_REFERENCE);
+create index GG_ADMIN.PA_TASKS_N9 on GG_ADMIN.PA_TASKS (ADW_NOTIFY_FLAG);
+create unique index GG_ADMIN.PA_TASKS_U1 on GG_ADMIN.PA_TASKS (TASK_ID);
+create unique index GG_ADMIN.PA_TASKS_U2 on GG_ADMIN.PA_TASKS (PROJECT_ID, TASK_NUMBER);
+

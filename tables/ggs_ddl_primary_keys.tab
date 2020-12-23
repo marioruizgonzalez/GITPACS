@@ -1,0 +1,7 @@
+create table GG_ADMIN.GGS_DDL_PRIMARY_KEYS
+(
+  seqno       NUMBER not null,
+  column_name VARCHAR2(400)
+)
+;
+

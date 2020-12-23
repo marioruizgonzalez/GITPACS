@@ -1,0 +1,7 @@
+create table GG_ADMIN.TOKEN_AUTHORITY
+(
+  id   NUMBER(10),
+  name VARCHAR2(50)
+)
+nologging;
+

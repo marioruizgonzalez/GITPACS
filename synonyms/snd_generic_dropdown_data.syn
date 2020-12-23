@@ -1,0 +1,3 @@
+create or replace synonym GG_ADMIN.SND_GENERIC_DROPDOWN_DATA
+  for IPACS.SND_GENERIC_DROPDOWN_DATA;
+

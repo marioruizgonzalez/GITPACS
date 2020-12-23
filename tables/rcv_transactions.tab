@@ -1,0 +1,9 @@
+create table GG_ADMIN.RCV_TRANSACTIONS
+(
+  transaction_id NUMBER not null,
+  project_id     NUMBER,
+  task_id        NUMBER
+)
+;
+create unique index GG_ADMIN.RCV_TRANSACTIONS_U1 on GG_ADMIN.RCV_TRANSACTIONS (TRANSACTION_ID);
+

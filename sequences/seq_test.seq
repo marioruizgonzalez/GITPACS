@@ -1,0 +1,7 @@
+create sequence GG_ADMIN.SEQ_TEST
+minvalue 1
+maxvalue 5000000
+start with 36609
+increment by 1
+cache 20;
+

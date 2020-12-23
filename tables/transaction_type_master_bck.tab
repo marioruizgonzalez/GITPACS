@@ -1,0 +1,14 @@
+create table GG_ADMIN.TRANSACTION_TYPE_MASTER_BCK
+(
+  transaction_type_id   NUMBER not null,
+  transaction_type_name VARCHAR2(80) not null,
+  type_class            NUMBER,
+  transaction_action_id NUMBER not null,
+  description           VARCHAR2(100) not null,
+  creation_date         DATE not null,
+  disable_date          DATE,
+  lookup_code           NUMBER not null,
+  meaning               VARCHAR2(200)
+)
+nologging;
+

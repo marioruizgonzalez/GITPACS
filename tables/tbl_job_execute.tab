@@ -1,0 +1,18 @@
+create table GG_ADMIN.TBL_JOB_EXECUTE
+(
+  job_name      VARCHAR2(1000),
+  date_execute  DATE,
+  rows_inserted NUMBER,
+  status_end    VARCHAR2(1000),
+  type          NUMBER,
+  tr_id_initial NUMBER,
+  tr_id_end     NUMBER
+)
+;
+comment on column GG_ADMIN.TBL_JOB_EXECUTE.type
+  is '1-.SKU_INSTANCE_HIST-2-SKU_INSTANCE_HIST';
+comment on column GG_ADMIN.TBL_JOB_EXECUTE.tr_id_initial
+  is 'Rango inicial transaction_id';
+comment on column GG_ADMIN.TBL_JOB_EXECUTE.tr_id_end
+  is 'Rango final transaction_id';
+

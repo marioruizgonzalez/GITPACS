@@ -1,0 +1,16 @@
+create table GG_ADMIN.GGS_DDL_RULES
+(
+  sno               NUMBER not null,
+  obj_name          VARCHAR2(200),
+  owner_name        VARCHAR2(200),
+  base_obj_name     VARCHAR2(200),
+  base_owner_name   VARCHAR2(200),
+  base_obj_property NUMBER,
+  obj_type          NUMBER,
+  command           VARCHAR2(50),
+  inclusion         NUMBER
+)
+;
+alter table GG_ADMIN.GGS_DDL_RULES
+  add primary key (SNO);
+

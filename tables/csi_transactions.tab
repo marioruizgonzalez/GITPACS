@@ -1,0 +1,57 @@
+create table GG_ADMIN.CSI_TRANSACTIONS
+(
+  transaction_id              NUMBER not null,
+  transaction_date            DATE not null,
+  source_transaction_date     DATE not null,
+  transaction_type_id         NUMBER not null,
+  txn_sub_type_id             NUMBER,
+  source_group_ref_id         NUMBER,
+  source_group_ref            VARCHAR2(50),
+  source_header_ref_id        NUMBER,
+  source_header_ref           VARCHAR2(150),
+  source_line_ref_id          NUMBER,
+  source_line_ref             VARCHAR2(150),
+  source_dist_ref_id1         NUMBER,
+  source_dist_ref_id2         NUMBER,
+  inv_material_transaction_id NUMBER,
+  transaction_quantity        NUMBER,
+  transaction_uom_code        VARCHAR2(3),
+  transacted_by               NUMBER,
+  transaction_status_code     VARCHAR2(30),
+  transaction_action_code     VARCHAR2(30),
+  message_id                  NUMBER,
+  split_reason_code           VARCHAR2(30),
+  context                     VARCHAR2(30),
+  attribute1                  VARCHAR2(150),
+  attribute2                  VARCHAR2(150),
+  attribute3                  VARCHAR2(150),
+  attribute4                  VARCHAR2(150),
+  attribute5                  VARCHAR2(150),
+  attribute6                  VARCHAR2(150),
+  attribute7                  VARCHAR2(150),
+  attribute8                  VARCHAR2(150),
+  attribute9                  VARCHAR2(150),
+  attribute10                 VARCHAR2(150),
+  attribute11                 VARCHAR2(150),
+  attribute12                 VARCHAR2(150),
+  attribute13                 VARCHAR2(150),
+  attribute14                 VARCHAR2(150),
+  attribute15                 VARCHAR2(150),
+  created_by                  NUMBER(15) not null,
+  creation_date               DATE not null,
+  last_updated_by             NUMBER(15) not null,
+  last_update_date            DATE not null,
+  last_update_login           NUMBER(15),
+  object_version_number       NUMBER(9) not null,
+  security_group_id           NUMBER,
+  migrated_flag               VARCHAR2(1),
+  gl_interface_status_code    NUMBER,
+  contracts_invoked           VARCHAR2(1)
+)
+;
+create index GG_ADMIN.CSI_TRANSACTIONS_N01 on GG_ADMIN.CSI_TRANSACTIONS (INV_MATERIAL_TRANSACTION_ID);
+create index GG_ADMIN.CSI_TRANSACTIONS_N02 on GG_ADMIN.CSI_TRANSACTIONS (SOURCE_LINE_REF_ID);
+create index GG_ADMIN.CSI_TRANSACTIONS_N03 on GG_ADMIN.CSI_TRANSACTIONS (TRANSACTION_TYPE_ID, TRANSACTION_STATUS_CODE, INV_MATERIAL_TRANSACTION_ID);
+create index GG_ADMIN.CSI_TRANSACTIONS_N04 on GG_ADMIN.CSI_TRANSACTIONS (GL_INTERFACE_STATUS_CODE);
+create unique index GG_ADMIN.CSI_TRANSACTIONS_U01 on GG_ADMIN.CSI_TRANSACTIONS (TRANSACTION_ID);
+

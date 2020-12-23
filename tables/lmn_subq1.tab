@@ -1,0 +1,8 @@
+create table GG_ADMIN.LMN_SUBQ1
+(
+  lot_number         VARCHAR2(240),
+  serial_number      VARCHAR2(90) not null,
+  move_order_line_id NUMBER
+)
+;
+

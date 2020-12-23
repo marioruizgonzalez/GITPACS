@@ -1,0 +1,21 @@
+create table GG_ADMIN.CHECKPT_TABLE
+(
+  group_name     VARCHAR2(8) not null,
+  group_key      NUMBER(19) not null,
+  seqno          NUMBER(10),
+  rba            NUMBER(19) not null,
+  audit_ts       VARCHAR2(29),
+  create_ts      DATE not null,
+  last_update_ts DATE not null,
+  current_dir    VARCHAR2(255) not null,
+  log_bsn        VARCHAR2(128),
+  log_csn        VARCHAR2(128),
+  log_xid        VARCHAR2(128),
+  log_cmplt_csn  VARCHAR2(128),
+  log_cmplt_xids VARCHAR2(2000),
+  version        NUMBER(3)
+)
+;
+alter table GG_ADMIN.CHECKPT_TABLE
+  add primary key (GROUP_NAME, GROUP_KEY);
+

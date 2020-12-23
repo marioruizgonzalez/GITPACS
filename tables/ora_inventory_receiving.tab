@@ -1,0 +1,30 @@
+create table GG_ADMIN.ORA_INVENTORY_RECEIVING
+(
+  id                      NUMBER generated always as identity,
+  erp_inventory_id        NUMBER not null,
+  sku                     VARCHAR2(55),
+  add_date                DATE not null,
+  mod_date                DATE,
+  org_id                  NUMBER not null,
+  org_short_name          VARCHAR2(55) not null,
+  inventory_serial_no     NUMBER,
+  uom                     VARCHAR2(55) not null,
+  quantity                NUMBER,
+  subinventory_id         NUMBER,
+  subinventory_short_code VARCHAR2(55),
+  locator_id              NUMBER not null,
+  locator_short_name      VARCHAR2(55) not null,
+  source_type             VARCHAR2(55) not null,
+  transaction_type        VARCHAR2(55) not null,
+  transaction_source_id   VARCHAR2(55) not null,
+  transaction_time        DATE not null,
+  transaction_action      VARCHAR2(55) not null,
+  lpn_no                  VARCHAR2(55),
+  shipment_no             VARCHAR2(55),
+  transfer_type           VARCHAR2(55) not null,
+  supplier                VARCHAR2(55) not null
+)
+;
+alter table GG_ADMIN.ORA_INVENTORY_RECEIVING
+  add constraint ORA_INVENTORY_RECEIVING_PK primary key (ID);
+

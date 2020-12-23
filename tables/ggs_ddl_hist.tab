@@ -1,0 +1,24 @@
+create table GG_ADMIN.GGS_DDL_HIST
+(
+  seqno         NUMBER not null,
+  objectid      NUMBER,
+  dataobjectid  NUMBER,
+  ddltype       VARCHAR2(130),
+  objectname    VARCHAR2(400),
+  objectowner   VARCHAR2(400),
+  objecttype    VARCHAR2(130),
+  fragmentno    NUMBER not null,
+  optime        CHAR(19) not null,
+  startscn      NUMBER,
+  metadata_text VARCHAR2(4000) not null,
+  auditcol      VARCHAR2(80)
+)
+;
+create index GG_ADMIN.GGS_DDL_HIST_index1 on GG_ADMIN.GGS_DDL_HIST (OBJECTID);
+create index GG_ADMIN.GGS_DDL_HIST_i1 on GG_ADMIN.GGS_DDL_HIST (SEQNO, FRAGMENTNO);
+create index GG_ADMIN.GGS_DDL_HIST_i2 on GG_ADMIN.GGS_DDL_HIST (OBJECTID, STARTSCN, FRAGMENTNO);
+create index GG_ADMIN.GGS_DDL_HIST_i3 on GG_ADMIN.GGS_DDL_HIST (STARTSCN, FRAGMENTNO);
+create index GG_ADMIN.GGS_DDL_HIST_i4 on GG_ADMIN.GGS_DDL_HIST (OBJECTNAME, OBJECTOWNER, OBJECTTYPE, STARTSCN, FRAGMENTNO);
+create index GG_ADMIN.GGS_DDL_HIST_i5 on GG_ADMIN.GGS_DDL_HIST (OPTIME);
+create index GG_ADMIN.GGS_DDL_HIST_i6 on GG_ADMIN.GGS_DDL_HIST (STARTSCN, AUDITCOL, FRAGMENTNO);
+

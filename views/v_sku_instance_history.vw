@@ -1,0 +1,5 @@
+create or replace force view gg_admin.v_sku_instance_history as
+select sku,b.SERIAL_NUMBER,ORG_ID,ORG_DES,TRANSACTION_TIME,TRANSACTION_ACTION,SUBINVENTORY_SHORT_CODE,LOCATOR_SHORT_NAME
+from gg_admin.SKU_INSTANCE a, gg_admin.SKU_INSTANCE_DETAIL b
+where a.ERP_INVENTORY_ID=b.TRANSACTON_ID;
+

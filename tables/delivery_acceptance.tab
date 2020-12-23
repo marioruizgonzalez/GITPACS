@@ -1,0 +1,28 @@
+create table GG_ADMIN.DELIVERY_ACCEPTANCE
+(
+  id                  NUMBER(10) not null,
+  org_source          VARCHAR2(10) not null,
+  org_dest            VARCHAR2(10),
+  transaction_type    VARCHAR2(50) not null,
+  site                VARCHAR2(10),
+  order_num           NUMBER(25),
+  delivery            NUMBER(25),
+  shipment_num        VARCHAR2(50),
+  source_id           NUMBER(25),
+  delivery_date       DATE not null,
+  carrier             VARCHAR2(100) not null,
+  driver              VARCHAR2(150) not null,
+  license_plate       VARCHAR2(20) not null,
+  carrier_tracking_id VARCHAR2(150),
+  own_tracking_id     VARCHAR2(150),
+  pallets             NUMBER(25) not null,
+  bulks               NUMBER(25) not null,
+  pieces              NUMBER(25) not null,
+  boxes               NUMBER(25) not null,
+  add_user            VARCHAR2(25) not null,
+  add_date            DATE not null,
+  mod_user            VARCHAR2(25),
+  mod_date            DATE
+)
+;
+

@@ -1,0 +1,15 @@
+create table GG_ADMIN.FA_ADDITIONS_B
+(
+  asset_id                NUMBER not null,
+  attribute_category_code VARCHAR2(210) not null,
+  asset_number            VARCHAR2(15) not null,
+  current_units           NUMBER not null,
+  asset_type              VARCHAR2(11) not null,
+  tag_number              VARCHAR2(15),
+  asset_category_id       NUMBER(15) not null,
+  serial_number           VARCHAR2(35),
+  last_update_date        DATE not null,
+  creation_date           DATE
+)
+;
+

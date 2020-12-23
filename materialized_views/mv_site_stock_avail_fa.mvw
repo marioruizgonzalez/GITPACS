@@ -1,0 +1,27 @@
+CREATE MATERIALIZED VIEW GG_ADMIN.MV_SITE_STOCK_AVAIL_FA
+REFRESH FORCE ON DEMAND
+AS
+SELECT DISTINCT
+   FAAB.attribute_category_code ASSET_CATEGORY,
+   FAAB.asset_id ASSET_ID,
+   FAAB.ASSET_NUMBER ASSET_NUMBER,
+   NVL2( FAAB.serial_number, 1, NVL2(FAAB.tag_number,1,nvl(d.units_assigned,0))) CURRENT_UNITS,
+   FAAB.asset_type ASSET_TYPE,
+   FAAB.tag_number TAG_NUMBER,
+   FAAB.asset_category_id ASSET_CATEGORY_ID,
+   FAAB.serial_number SERIAL_NUMBER_FA,
+   FAAB.last_update_date LAST_UPDATE_DATE,
+   FAAB.creation_date CREATION_DATE,
+   d.location_id FA_LOCATION_ID,
+   CIAS.instance_id,
+   CIAS.update_status
+FROM
+    FA.fa_additions_b@OFNX_SPERTO FAAB,
+    FA.FA_DISTRIBUTION_HISTORY@OFNX_SPERTO d ,
+    CSI.csi_i_assets@OFNX_SPERTO CIAS
+WHERE 1=1
+    and d.asset_id(+) = FAAB.asset_id
+  and NVL(d.date_ineffective(+),sysdate) >= sysdate
+    AND CIAS.fa_asset_id = FAAB.asset_id(+)
+    AND  d.location_id(+) = cias.fa_location_id;
+

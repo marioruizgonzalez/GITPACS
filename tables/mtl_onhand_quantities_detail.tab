@@ -1,0 +1,44 @@
+create table GG_ADMIN.MTL_ONHAND_QUANTITIES_DETAIL
+(
+  inventory_item_id              NUMBER not null,
+  organization_id                NUMBER not null,
+  date_received                  DATE,
+  last_update_date               DATE not null,
+  last_updated_by                NUMBER not null,
+  creation_date                  DATE not null,
+  created_by                     NUMBER not null,
+  last_update_login              NUMBER,
+  primary_transaction_quantity   NUMBER not null,
+  subinventory_code              VARCHAR2(10) not null,
+  revision                       VARCHAR2(3),
+  locator_id                     NUMBER,
+  create_transaction_id          NUMBER,
+  update_transaction_id          NUMBER,
+  lot_number                     VARCHAR2(80),
+  orig_date_received             DATE,
+  cost_group_id                  NUMBER,
+  containerized_flag             NUMBER,
+  project_id                     NUMBER,
+  task_id                        NUMBER,
+  onhand_quantities_id           NUMBER not null,
+  organization_type              NUMBER not null,
+  owning_organization_id         NUMBER not null,
+  owning_tp_type                 NUMBER not null,
+  planning_organization_id       NUMBER not null,
+  planning_tp_type               NUMBER not null,
+  transaction_uom_code           VARCHAR2(3) not null,
+  transaction_quantity           NUMBER not null,
+  secondary_uom_code             VARCHAR2(3),
+  secondary_transaction_quantity NUMBER,
+  is_consigned                   NUMBER not null,
+  lpn_id                         NUMBER,
+  status_id                      NUMBER,
+  mcc_code                       VARCHAR2(30)
+)
+;
+create index GG_ADMIN.MTL_ONHAND_QUANTITIES_N4 on GG_ADMIN.MTL_ONHAND_QUANTITIES_DETAIL (INVENTORY_ITEM_ID, ORGANIZATION_ID, SUBINVENTORY_CODE, PRIMARY_TRANSACTION_QUANTITY);
+create index GG_ADMIN.MTL_ONHAND_QUANTITIES_N5 on GG_ADMIN.MTL_ONHAND_QUANTITIES_DETAIL (ORGANIZATION_ID, SUBINVENTORY_CODE, LOCATOR_ID, LPN_ID);
+create index GG_ADMIN.MTL_ONHAND_QUANTITIES_N6 on GG_ADMIN.MTL_ONHAND_QUANTITIES_DETAIL (ORGANIZATION_ID, INVENTORY_ITEM_ID, COST_GROUP_ID);
+create index GG_ADMIN.MTL_ONHAND_QUANTITIES_N7 on GG_ADMIN.MTL_ONHAND_QUANTITIES_DETAIL (IS_CONSIGNED);
+create index GG_ADMIN.MTL_ONHAND_QUANTITIES_N8 on GG_ADMIN.MTL_ONHAND_QUANTITIES_DETAIL (ORGANIZATION_ID, LPN_ID);
+

@@ -1,0 +1,21 @@
+create table GG_ADMIN.INV_REC_MASTER
+(
+  trx_tmp_id       NUMBER not null,
+  org_orig         VARCHAR2(25) not null,
+  subinv_orig      VARCHAR2(25),
+  loc_origen       VARCHAR2(25),
+  org_des          VARCHAR2(25) not null,
+  subinv_des       VARCHAR2(25),
+  loc_des          VARCHAR2(25),
+  num_envio        VARCHAR2(25) not null,
+  tipo_trx         NUMBER not null,
+  process_status   NUMBER not null,
+  creation_date    DATE not null,
+  last_update_date DATE not null,
+  creation_by      VARCHAR2(20) not null,
+  updated_by       VARCHAR2(20) not null
+)
+;
+alter table GG_ADMIN.INV_REC_MASTER
+  add constraint PK_INV_REC_MAST primary key (TRX_TMP_ID);
+

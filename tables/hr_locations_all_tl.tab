@@ -1,0 +1,17 @@
+create table GG_ADMIN.HR_LOCATIONS_ALL_TL
+(
+  location_id       NUMBER(15) not null,
+  language          VARCHAR2(4) not null,
+  source_lang       VARCHAR2(4) not null,
+  location_code     VARCHAR2(60) not null,
+  description       VARCHAR2(240),
+  last_update_date  DATE,
+  last_updated_by   NUMBER(15),
+  last_update_login NUMBER(15),
+  created_by        NUMBER(15),
+  creation_date     DATE
+)
+;
+create index GG_ADMIN.HR_LOCATIONS_ALL_TL_N2 on GG_ADMIN.HR_LOCATIONS_ALL_TL (LANGUAGE, LOCATION_CODE);
+create unique index GG_ADMIN.HR_LOCATIONS_ALL_TL_PK on GG_ADMIN.HR_LOCATIONS_ALL_TL (LOCATION_ID, LANGUAGE);
+

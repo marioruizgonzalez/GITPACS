@@ -1,0 +1,30 @@
+create table GG_ADMIN.ORA_DELIVERY_ACCEPTANCE
+(
+  id                  NUMBER generated always as identity,
+  org_id              VARCHAR2(10) not null,
+  transaction_type    VARCHAR2(50) not null,
+  order_id            NUMBER,
+  delivery_id         NUMBER,
+  shipment_id         VARCHAR2(50),
+  source_id           NUMBER,
+  delivery_date       DATE not null,
+  carrier             VARCHAR2(100) not null,
+  driver              VARCHAR2(151) not null,
+  license_plate       VARCHAR2(20) not null,
+  carrier_tracking_id VARCHAR2(150),
+  own_tracking_id     VARCHAR2(150),
+  pallets             NUMBER not null,
+  bulks               NUMBER not null,
+  pieces              NUMBER not null,
+  boxes               NUMBER not null,
+  customer_id         NUMBER not null,
+  document_type_id    NUMBER not null,
+  archive_id          NUMBER not null,
+  origin              NUMBER not null,
+  add_date            DATE not null,
+  mod_date            DATE
+)
+;
+alter table GG_ADMIN.ORA_DELIVERY_ACCEPTANCE
+  add constraint ORA_DELIVERY_ACCEPTANCE_PK primary key (ID);
+

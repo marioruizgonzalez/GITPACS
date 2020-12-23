@@ -1,0 +1,18 @@
+create table GG_ADMIN.HR_ALL_ORGANIZATION_UNITS_TL
+(
+  organization_id   NUMBER(15) not null,
+  language          VARCHAR2(4) not null,
+  source_lang       VARCHAR2(4) not null,
+  name              VARCHAR2(240) not null,
+  last_update_date  DATE,
+  last_updated_by   NUMBER(15),
+  last_update_login NUMBER(15),
+  created_by        NUMBER(15),
+  creation_date     DATE
+)
+;
+create index GG_ADMIN.HR_ALL_ORGANIZATION_UNTS_TL_N2 on GG_ADMIN.HR_ALL_ORGANIZATION_UNITS_TL (LANGUAGE, NAME);
+create index GG_ADMIN.HR_ALL_ORGANIZATION_UNTS_TL_N3 on GG_ADMIN.HR_ALL_ORGANIZATION_UNITS_TL (LANGUAGE, ORGANIZATION_ID, NAME);
+alter table GG_ADMIN.HR_ALL_ORGANIZATION_UNITS_TL
+  add constraint HR_ALL_ORGANIZATION_UNTS_TL_PK primary key (ORGANIZATION_ID, LANGUAGE);
+

@@ -1,0 +1,16 @@
+create table GG_ADMIN.OFA_INV_LS_RCV_HEADERS
+(
+  trx_tmp_id       NUMBER generated always as identity,
+  org_orig         VARCHAR2(25) not null,
+  subinv_orig      VARCHAR2(25),
+  loc_origen       VARCHAR2(25),
+  org_des          VARCHAR2(25) not null,
+  subinv_des       VARCHAR2(25),
+  loc_des          VARCHAR2(25) not null,
+  num_envio        VARCHAR2(25) not null,
+  tipo_trx         NUMBER not null,
+  creation_date    DATE not null,
+  last_update_date DATE not null
+)
+nologging;
+
